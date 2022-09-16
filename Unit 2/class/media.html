@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <script>
+        // navigator.geolocation - two primary functions
+            // getCurrentPosition()
+            // watchPosition
+        function func() {
+            navigator.geolocation.getCurrentPosition(display);
+        }    
+        function display(position) {
+            alert("Current Position is " + position.coords.longitude + " " + position.coords.latitude);
+        }
+    </script>
+</head>
+<body> <button onclick="func()">Click Here</button>
+    <audio controls>
+        <source src="audio2.mp3" type="audio/mp3">
+    </audio><br>
+    <video controls width="300px" height="300px" muted poster="srvid.gif">
+        <source src="video.mp4" type="video/mp4">
+    </video><br>
+    <progress value="50" max="100" ><br>   
+    <!-- Autoplay without muted will not work without changing settings -->
+   
+</body>
+</html>

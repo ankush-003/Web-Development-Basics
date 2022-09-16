@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <style>
+        p h1{
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo">The messgage is</p>
+    <script>
+        function display(message) {
+            document.getElementById("demo").innerHTML = message;
+        }
+
+        let exp1 = new Promise(function(resolve,reject) {
+            let x = 0;
+
+            if(x==0) {
+                resolve("OK")
+            }
+            else {
+                reject("Error");
+            }
+        });
+
+        exp1
+        .then(
+            function(value) {
+                //display(value);
+                let head = document.createElement("h1");
+                head.innerHTML = value;
+                document.querySelector("#demo").appendChild(head);
+            }
+        )
+        .catch(
+            function(error) {display(error);}
+        )
+    </script>
+</body>
+</html>

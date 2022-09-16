@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <script type="text/javascript" src="eventHandling.js"></script>
+    <style>
+        div{
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            text-shadow: 1px 1px 1px red;
+        }
+        ul,li {
+            border: 2px dotted black;
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body onload="init()">
+        <!-- There are three phases in which an event can propagete to handlers defined in parent elements:
+        1. Capturing Phase
+        2. Target Phase
+        3. Bubbling Phase -->
+
+    <div id="div1">
+        <h2>Popular Films</h2>
+        <ul id="list"> 
+            <li> RRR </li>
+            <li> KGF-2 </li>
+            <li id="liele"> 777 Charlie </li>
+        </ul>
+    </div>
+</body>
+</html>

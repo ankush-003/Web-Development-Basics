@@ -1,0 +1,22 @@
+/*
+by default image has display as inline, others like heading have block
+*/
+
+h3 {
+   /* border: 5px solid black;/* border-width, border style and border color */
+   border-left: 5px solid black;
+   border-top: 5px solid black;
+   border-bottom: 5px double black;
+   border-right: 5px solid black;
+
+   margin-right: 25px;
+
+   padding: 5px ;
+   padding-top: 10px;
+   position: sticky; /* absolute -> no space allocated in normal flow, 
+   fixed -> similar to absolute but moves as we scroll, 
+   relative -> space is given and dist from its allocated space, 
+   sticky -> relative + fixed, visible till parent tag like div here*/
+   left:50px;
+   top: 10px;
+}

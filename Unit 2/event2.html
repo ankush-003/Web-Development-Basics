@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        function clicker() {
+            console.log(event.target.id + "handled 1");
+        }
+
+        function init() {
+            document.querySelector("p").addEventListener("click",clicker,true);// useCapture is false by default
+            document.querySelector("p").addEventListener("click",clicker,true);
+            document.querySelector("p").onclick = function() {
+                console.log(event.target.id + "handled 3");
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <p id="p1" onclick="console.log('p1 handler 4')"> This needs to be clicked!</p>
+    <!-- first init is fired, so first handed 3 (event property is executed first), 
+        then p1 handled 1 (as by default capture is false (bubbling) so goes from inner to outer), 
+        inline is not executed (inline is overwritten) -->
+</body>
+</html>

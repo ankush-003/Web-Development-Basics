@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        div,ul,li,ol {
+            border: 1px solid black;
+            padding: 12px;
+            margin: 10px;
+        }
+        p {
+            color: royalblue;
+        }
+    </style>
+    
+</head>
+<body onload="func1()">
+    <div id="div1" class="cls1">
+        <p>PES University</p>
+            <ul id="ul1" class="cls1">
+                <li>B.Tech</li>
+                <li>M.Tech</li>
+                <li class="cls1" id="li1">BBA</li>
+            </ul>
+            <p>B.Tech Branches:</p>
+            <ol id="ol1" class="cls1">
+                <li>CSE</li>
+                <li>ECE</li>
+                <li>EEE</li>
+            </ol>
+    </div>
+    <script>
+
+        // element.addEventListener("event",func_ref, flag);
+            // flag = true :=> Handler registered for capturing phase
+            // flag = false :=> Handler registered for bubbling phase (default)
+        function func1() {
+            // document.querySelector("#div1").addEventListener("click",func2,true);
+            // document.querySelector("#ul1").addEventListener("click",func2,true);
+            // document.querySelector("#li1").addEventListener("click",func2,true);
+            // document.querySelector("#ol1").addEventListener("click",func2,true);
+
+            var ele1 = document.querySelectorAll(".cls1");
+            for (i in ele1)
+            {
+                ele1[i].addEventListener("click",func2,true);
+                ele1[i].addEventListener("dblclick",func2,false);
+            }
+        }    
+        function func2() {
+            alert("ID which is executed is = " + this.getAttribute("id"));
+        }    
+    </script>
+</body>
+</html>

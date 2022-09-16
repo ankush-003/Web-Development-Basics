@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        // Inline event
+        function func1() {
+            // changing color of text when event occurs
+            event.target.style.color="red";
+            event.target.innerHTML = "Clicked";
+            // with innerTEXT only text is displayed
+        }
+        function func12() {
+            event.target.style.background = "green";
+        }
+        /*// Event Handler Properties
+            // element.on<event> = function_name;
+        function func2() {
+            // var ele1 = document.getElementsByTagName("li");
+            var ele1 = document.querySelectorAll("li");
+            for (var i in ele1)
+                ele1[i].onclick = func1;
+        }*/
+        // Event Listeners
+            //element.addEventListener("event", function or function_name) [event: click,dblclick]
+        function func3() {
+            event.target.style.color="red";
+            event.target.innerHTML = "Clicked";
+        }    
+
+        function func2() {
+            document.querySelector("h2").addEventListener("click",func3)
+        }
+
+        
+    </script>
+</head>
+<body>
+    <!-- <h2 onclick="func1()" ondblclick="func12()">Big Fish</h2> -->
+    <h2 ondblclick="func2()">Big Fish</h2>
+    <ul>
+        <li>TATA</li>
+        <li>Adani</li>
+        <li>Andrew Tate</li>
+    </ul>
+    <br>
+    <ul>
+        <li></li>
+    </ul>
+</body>
+</html>

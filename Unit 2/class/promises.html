@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Promises</title>
+    <script>
+        var exp1 = new Promise(function (resolve,reject) {
+            var x ="test";
+            var y ="test";
+            
+            if(x==y) {
+                var details = {
+                    name:"Ankush",
+                    id:"PES1UG21CS091"
+                }
+                resolve(details);
+            }
+            else
+                reject();    
+        })
+
+        exp1
+        .then(function(details) {// refers to resolve()
+            //alert("correct!");
+            console.log("correct!");
+            // document.write(details.name);
+            //document.querySelector("p").insertAdjacentHTML = "<h1>" + details.name + "</h1>"
+            //document.querySelector("h2").innerText = details.name;
+        })
+        .catch(function(){
+            console.log("incorrect!");
+        })
+
+    </script>
+</head>
+<body>
+    <!-- 
+        Callback -> Callback Hell (when we use it multiple times)
+        Promises:
+        i) Pending -> UD
+        ii) Fullfill -> Resolve -> .then
+        iii) Reject -> Reject (error message) -> .catch
+     -->
+     <p>Answer will be displayed here: </p>
+     <h2></h2>
+</body>
+</html>

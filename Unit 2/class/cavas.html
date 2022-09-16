@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Canvas and SVG</title>
+    <style>
+        canvas {
+            border: 2px double black;
+        }
+    </style>
+    
+</head>
+<body onload="canva()">
+    <canvas id="mycanvas" width="200" height="200">
+        Canvas is suppored
+    </canvas>
+    <svg width="500" height="500">
+        <circle cx="50" cy="50" r="50" stoke="green" stroke-width="10" fill="yellow"/>
+        <!-- <polygon points="200,100,300,400" style="fill:aqua;stroke: black;stroke-width: 1;"/> -->
+    </svg>
+</body>
+<script type="text/javascript">
+    function canva() {
+        var c = document.getElementById("mycanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(50,50,100,100);// x,y,height,width
+        // fillRect(x,y,width,height) -> draws a filled rectangle
+        ctx.strokeRect(25,25,150,150);
+        ctx.moveTo(150,150);
+        ctx.lineTo(200,200);
+    }
+    // SVG stands for Scalable Vector Graphics
+    // 
+</script>
+</html>

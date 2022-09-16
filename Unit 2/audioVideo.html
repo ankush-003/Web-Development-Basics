@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Video in HTML</title>
+    <style>
+        video {
+            box-shadow: 5px 5px  1px black;
+            display: block;
+        }
+        audio {
+            display: block;
+            margin: 10px;
+        }
+        label,progress {
+            margin: 5px;
+
+        }
+    </style>
+    <script>
+        function init() {
+            var p1 = document.querySelector("#progress")
+            p1.value+=5;
+            if(p1.value!=100) {
+                setTimeout(init,2000);
+            }
+        }
+
+        function init1() {
+            video = document.querySelector("#vid");
+            //video.play();
+            setTimeout(fun,1000);
+            video.play();
+        }
+
+        function fun() {
+            tmp = Math.floor(Math.random()*(video.duration));
+            console.log(tmp);
+            video.currentTime = tmp;
+        }
+
+    </script>
+</head>
+<body onload="init1(),init()">
+    <!-- HTML supports MP3, Wav and OGG audio formats -->
+    <audio controls="c1" muted loop autoplay id="aud">
+        <!-- Browser selects any one mostly first one, text is displayed if audio files are'nt supported -->
+        <!-- Autoplay for the media is allowed if it is muted -->
+        <source src="/class/audio2.mp3"/>
+        <source src="class/ph_intro.mp3"/>
+        Your Browser doesn't support audio element!
+        <!-- Few Attributes:
+                i) autoplay
+                ii) controls
+                iii) loop
+                iv) preload (ignored if autoplay is present)
+                v) src -> specifies url of audio to play
+        -->
+    </audio>
+
+    <video controls muted width="350px" height="200px" poster="/class/srvid.gif" id="vid">
+         <!-- Muted by default -->
+         <!-- Poster: specifies url of an image representing the video -->
+        <source src="/class/video.mp4" type="video/mp4">
+        Your Browser does not support the video
+    </video><br>
+
+    <label for="progress">File Download</label>
+    <progress id="progress" value="0" max = "100" min="0"></progress>
+</body>
+</html>

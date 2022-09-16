@@ -1,0 +1,65 @@
+h1,ul {
+    color:red;
+    background-color: yellow;
+    text-align: center;
+    border: solid;
+}
+
+h1:hover{
+    background-color: white;
+    text-align: left;
+    border: dashed;
+}
+/* Class selector represented by . */
+h1.cls1{
+    color: rgb(230, 0, 255);
+    font-size: 20px;
+}
+
+h2 {
+    font-family: sans-serif;font-size:100px;border: dashed;border-color: crimson;background-image: url(iron.jpg);color: blueviolet;
+}
+h2:hover{
+    background-image: url(city.jpg);
+}
+
+div > p{
+    background-color: yellow;
+}
+
+ul {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.cls2 {
+    color: red;
+}/* Now this can be used anywhere in the program */
+
+
+li#id69 {
+    color: blue;
+}
+
+a:active {
+    color: chartreuse;
+    background-color: yellow;
+}
+
+a:visited {
+    color: crimson;
+}
+
+h1 > h2 {
+    color: chartreuse;
+}
+/*
+1. Primary Selectors
+    -Element Selector
+    -Class Selector (can be used multiple times)
+    -ID Selector (can be used once)
+
+2. Multiple Selectors
+
+3. Pseudo selector (Ex: .hover)
+*/

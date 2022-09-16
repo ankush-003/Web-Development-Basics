@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible</title>
+    <style>
+        #main {
+            width: 800px;
+            height: 200px;
+            border: 5px solid whitesmoke;
+            display: flex;
+        }
+        #main div{
+            /* 1->fits it to the frame, 0-> remains same 
+            flex-grow: increases the size
+            flex-shrink: reduces the size
+            flex-basis:
+            */
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 200px;
+        }
+        #main div:nth-of-type(2) {
+            flex-shrink: 2;
+        }
+        /*div {
+            background-color: lightgray;
+            width: 300px;
+            border: 15px solid green;
+            border-radius: 20px;
+            padding: 35px;
+            margin: 20px;
+            text-align: justify;/*aligns both on left and right
+        }
+        */
+        h3 {
+            color: white;
+            font-size: 50px;
+        }
+        div.one {
+            background: red;
+        }
+        div.two {
+            background: green;
+        }
+        div.three {
+            background: blue;
+        }
+        div.four {
+            background: chartreuse;
+        }
+        div:nth-of-type(5) {
+            background: yellow;
+        }
+        div:nth-of-type(6) {
+            background: orangered;
+        }       
+    </style>
+</head>
+<body bgcolor="black">
+<h3>Testing</h3>  
+<!-- <p><center><img src="iron.jpg" alt="iron man forever" width="500px" height="250px"></center></p> -->
+<span id = "main">
+    <div class="one">50px</div>
+    <div class="two">100px</div>
+    <div class="three">150px</div>
+    <div class="four">200px</div>
+    <div>25px</div>
+    <div>300px</div>
+</span>
+</body>
+</html>

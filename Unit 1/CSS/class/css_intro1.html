@@ -1,0 +1,68 @@
+<!-- syntax: 
+    selector {property1: value1; property2: value2;}
+
+Example: 
+    p {
+        margin: 5px 0 10px 0;
+        font-weight: bold;
+        font-family: Arial, Helvetica, Sans -serif;
+    }
+
+inline is styling is default -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Intro to CSS</title>
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="css_intro1.css"/>
+    <link rel="icon" href="icon.png">
+    <!-- Internal / Embedded Style Sheet -->
+    <!-- <style>
+        h1 {
+            color:red;
+            background-color: yellow;
+            text-align: center;
+            border: solid;
+        }
+        h1:hover{
+            background-color: white;
+            text-align: left;
+            border: dashed;
+        }
+        h2 {
+            font-family: sans-serif;font-size:100px;border: dashed;border-color: crimson;background-image: url(iron.jpg);color: blueviolet;
+        }
+        h2:hover{
+            background-image: url(city.jpg);
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Inline Style Sheet -->
+    <!-- <h1 style="color:red;background-color: yellow;text-align: center;border: solid;">CSS Heading</h1> -->
+    <h1>CSS Heading</h1>
+    <!-- h2 is direct child of h1 -->
+    <h2>CSS Second Heading</h2>
+    <!-- <h1 style="border: dashed;">Testing</h1> -->
+    <h1 class="cls1">Testing</h1>
+    <h1 class="cls1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, iure.
+    </h1>
+    <ul> Random List
+        <li class="cls2">Item 1</li>
+        <li class="cls2">Item 2</li>
+        <li id="id69">Item 3</li>
+        <li id="id69">Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+   </ul><br><br>
+   <a href="iron.jpg" target="_blank">Click Here to open the link</a>
+   <div>
+    <h1>Just a paragraph</h1>
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente, accusantium odit ut eveniet pariatur amet <span style="font-weight:bold;">random text</span> </div> nulla blanditiis assumenda.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, modi.</p><br><br>
+   <!-- when form opens by default cursor is in this --> <form method="post" action="random.php">
+   Enter name: <input type="text" placeholder="First Name" autofocus>
+   <input type="text" placeholder="Last Name">
+   </form>
+</body>
+</html>

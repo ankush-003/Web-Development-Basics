@@ -1,0 +1,47 @@
+li {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+li.listItem {
+    font-size: 24px;
+    font-weight: bold;
+}/* For a particular class only */
+
+li#li1 {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}/* For an element with particular ID */
+
+ol li {
+    font-size: 18px;
+    font-family: Helvetica;
+    color: rebeccapurple;
+}/* Will be applied to li tags of only ordered list -- hierarchy */
+
+ol.ol1 > li {
+    color: green;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2,h3,h4,h5,h6 {
+    color: darkslateblue;
+    font-style: italic;
+}/* For a set of elements */
+
+li:hover {/* Pseudo Selector */
+    font-weight: bold;
+    font-size: 24px;
+    color: greenyellow;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {/* Element selected are called as active */
+    font-weight: bold;
+    color: crimson;
+}
+

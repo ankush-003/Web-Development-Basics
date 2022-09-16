@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100vh;
+    justify-content: center;
+}
+div.left {
+    background-color: aliceblue;
+    float: left;
+    width: 50%;
+    height: 100%;
+    
+}
+div.right {
+    background: linear-gradient(#141e30, #243b55);
+    float: left;
+    width: 50%;
+    height: 100%;   
+}
+
+.form {
+    font-size: 30px;
+}
+
+.centred {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.formbutton {
+    font-size: 20px;
+    padding: 15px 30px;
+    /*color: white;*/
+    background-color:darkblue;
+    border-radius: 12px;
+    border: 2px solid black;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.formtext{
+    font-size: 20px;
+}
+
+.formbutton:hover {
+    /*background: #03e9f4;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                        0 0 25px #03e9f4,
+                        0 0 50px #03e9f4,
+                        0 0 100px #03e9f4;
+    */
+    background: #036bf4;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #036bf4,
+                        0 0 25px #036bf4,
+                        0 0 50px #036bf4,
+                        0 0 100px #036bf4;                    
+}
+
+input#signin {
+    font-size: 18px;
+    padding: 10px 30px;
+    color: white;
+    background-color: darkblue;
+}
+
+a {
+    padding-left: 22%;
+}

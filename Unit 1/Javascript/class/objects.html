@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Objects</title> 
+</head>
+<body>
+    <h1>This is OOPS!</h1>
+    <script type="text/javascript">
+        var emp2 = {
+            "firstName": "Aruna",
+            "lastName": "Srinivasan",
+            "showName": function () {
+                alert(this.firstName + " " + this.lastName);
+            }
+        }
+        function showName() {
+                document.write(emp2.firstName + " " + emp2.lastName);
+        }
+        // showName();
+        // emp2.showName();
+
+        let item = {
+            name: "PES",
+            price: "Rs. 1,12,699",
+            qty:1
+        };
+
+        // document.write(item.name + " " + item.price + " " + item.qty +"<br>");
+
+        item.show = function () {
+            document.write(this.name + " " + this.price + " " + this.qty + "<br>")
+        }
+
+        item.show();
+
+        // Constructors
+        function Employee(fname,lname)
+        {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.showName = function () {
+                alert(this.firstName + " " + this.lastName + "!");
+            };
+        }
+        var emp5 = new Employee("Arya","Chutiya");
+        var emp6 = new Employee("Ankush","Best");
+        emp5.showName();
+        emp6.showName();
+        //prototype: holds the object which helps in multiple declaration of instances
+
+        function item(name, price, qty) {
+            this.name = name;
+            this.price = price;
+            this.qty = qty;
+        }
+
+        var item1 = new item("Reebok","Rs. 2000",20);
+        var item2 = new item("Nike","Rs. 3000",25);
+
+        item.prototype.show = function() {
+            document.write(this.name + " " + this.price + " " + this.qty);
+        }
+
+        item1.show();
+        item2.show();
+    </script>
+</body>
+</html>

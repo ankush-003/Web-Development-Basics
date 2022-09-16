@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Intro to forms</title>
+    </head>
+    <body>
+        <!--Forms in HTML-->
+        <!--Syntax: <form method="post" action="process.php" target="_blank">
+                        <input type="..." name="..." />
+                    </form>
+                    Input Types: Text Box, Text Area, Checkboxes, Radio Button, Dropdown
+                                list, Buttons-->
+        <h2>Fruit Survey</h2>                        
+        <form method="get" action="save.php" target="_blank">
+            Name: <input type="text" name="uname" placeholder="Enter your name here"/><br/><br/>
+            Email: <input type="text" name="uemail" placeholder="Enter your email-id here"/><br/><br/>
+            Address: <textarea name="uadd" rows="3" cols="20" placeholder="Enter your address here"></textarea><br/><br/>
+            Your Favourite fruit <input type="checkbox" name="uff" value="Apple"/> Apple 
+            <input type="checkbox" name="uff" value="Pomagranate"/> Pomagranate
+            <input type="checkbox" name="uff" value="Orange" checked/> Orange<br/><br/>
+            No. of pieces consumed daily: <input type="radio" name="unum" value="1"/>1
+            <input type="radio" name="unum" value="2"/>2
+            <input type="radio" name="unum" value="3"/>3
+            <input type="radio" name="unum" value="4"/>4<br/><br/>
+            Amount of fruits: <input type="number" name="amt" min="1" max="10" placeholder="0"/><br><br>
+            How do you consume your fruit?
+            <select name="ucons" multiple>
+                <option value="milkshake">Milkshake</option>
+                <option value="Cut Fruits">Cut Fruits</option>
+                <option value="salad">Salad</option>
+            </select><br/><br/>
+            <label for="fileupload">Select the file to upload</label>
+            <input type="file" name="fileupload" accept="image"><br><br>
+            <input type ="submit" name ="submit" value="Submit" />
+            <input type ="reset" name ="reset" value ="Reset" />
+            <input type ="button" name ="ok" value="ok">
+            <button>click here</button>
+        </form>
+    </body>
+</html>

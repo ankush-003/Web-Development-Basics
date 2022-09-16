@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        form{
+            display: inline;
+        }
+        button {
+            display: inline;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <h1>Events in HTML</h1>
+    <!-- 
+        An element can be assigned event handler properties
+            element.on<event> = handler;
+                (here handler is a callback function)
+     -->
+     <!-- Inline Method -->
+     <form action="" method="post">
+        <input type="button" name="mybutton" value="click Me" onclick="alert('Button was clicked');">
+     </form>
+     <button id="but1">Testing</button><br>
+     <!-- An event listener watches for an event on an element
+            element.addEventListener(event, handler)
+        Event Examples: click, dblclick, mousemove, mouseover (Mouse)
+                        keydown, keyup, keypress (Keyboard)
+                        submit, reset, focus, blur (forms)    
+     -->
+     <!-- Event object properties:
+        target: the target of the event
+        type: the name of the event fired
+        charCode: unicode character of the key pressed
+        button: returns which mouse button was pressed
+     -->
+     <p onmouseover="handler(event)">Popular Films:</p>
+    <!-- Event takes in the current target element, behaves like a pointer -->
+     <ul>
+        <li>RRR</li>
+        <li>KGF-2</li>
+        <li>777 Charlie</li>
+     </ul>
+     
+</body>
+<script type="text/javascript" src="events.js"></script>
+</html>

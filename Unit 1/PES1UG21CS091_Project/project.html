@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            background: greenyellow;
+        }
+        table,th,td {
+            border: 1px double black;
+            border-radius: 8px;
+            background: yellow;
+            padding: 2px;
+            text-align: center;
+        }
+
+        .table {
+            width: 50%;
+            height: 2px;
+        }
+
+        label {
+            display: inline-block;
+            text-align: right;
+            width: 100px;
+
+        }
+
+        form {
+            background-color: aquamarine;
+            border: 2px double black;
+            padding: 4px;
+            width: fit-content;
+
+        }
+        input {
+            margin: 2px;
+        }
+        .inptext {
+            width: 250px;
+        }
+
+        .buttons {
+            position: relative;
+            left: 20%;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="form.js"></script>
+</head>
+<body>
+    <!-- image -->
+    <img src="index.png" alt="PES logo" style="height: 175px;width: 175px ;position:absolute; right:2.5%; border: 1px solid black;">
+
+    <!-- table -->
+    <h2>Student Information</h2>
+    <table class="table">
+        <tr>
+            <th>SRN</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td rowspan="4">SRN:PES1UG21CS091</td>
+            <td>Web Tech</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>DSA</td>
+            <td>69</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>DBMS</td>
+            <td>79</td>
+        </tr>
+        <tr>
+            <td colspan="3">Results: PASS</td>
+        </tr>
+    </table>
+    <br>
+
+    <!-- Form -->
+    <h3>Re-Evaluation Request Form</h3>
+    <form action="form.php" method="post" id="form">
+        <div>
+        <label for="uname">First Name:</label>
+        <input type="text" name="uname" class="inptext" placeholder="Enter First Name here" required><br>
+        </div>
+        <div>
+        <label for="usrn">SRN:</label>
+        <input type="text" name="usrn" placeholder="Enter SRN" class="inptext" required><br>
+        </div>
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="Male" required>Male <input type="radio" name="gender" value="Female" required> Female <br>
+        <label for="uemail">Email Id:</label>
+        <input type="text" title="example@pes.edu" name="uemail" class="inptext" pattern=".+@pes.edu" placeholder="example@pes.edu" required><br>
+        <label for="umob" style="width:100px ;" aria-placeholder="Enter 10 digit mobile number" >Mobile:</label>
+        <input type="text" name="umob" pattern="[0-9]{10}" required><br>
+        <label for="subjects">Subjects:</label>
+        <select name="subjects" required >
+            <option value="nil" selected>Select Subject</option>
+            <option value="Web">Web Tech</option>
+            <option value="DSA">DSA</option>
+            <option value="Python">Python</option>
+            <option value="DBMS">DBMS</option>
+        </select><br>
+        <label for="date">Date of Request:</label>
+        <input type="date" name="date"><br>
+        <input type="checkbox" name="confirm" required> I have verified above information are correct <br>
+        <input type="submit" class="buttons" value="Submit" onclick="endForm()">  <input type="reset" class="buttons"name="Reset" id="">
+    </form>
+</body>
+</html>

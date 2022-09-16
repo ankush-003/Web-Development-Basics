@@ -1,0 +1,38 @@
+<html>
+<html>
+<head>
+	
+</head>
+<body>
+	<script>
+		// JavaScript Class
+		
+/*		ECMAScript 2015 (ES6)
+				
+	Syntax of Class
+	
+		class ClassName {
+			constructor() { ... }
+		}
+		
+*/
+
+		class abc{						//abc is the classname
+			constructor(name,age){		// Constructor keyword should be used 
+				this.uname=name;
+				this.uage=age;
+			}
+		show(){
+			document.write(this.uname+" "+this.uage) // display output
+		}
+		}
+		
+		var item1= new abc("PES",50); 	//Passing values for class fields
+		item1.show();					// display output
+		
+		item1.uname="PESU";				// changinh the value of a field that is already declared
+		item1.show();	
+		
+	</script>
+</body>
+</html>

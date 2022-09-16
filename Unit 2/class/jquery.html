@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <!-- Including JQuery Library -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("h1").click(function() {
+                $(this).hide();
+            });
+        })
+
+        $(document).ready(function() {
+            $("button").click(function() {
+                // first...last...even...odd
+                $("ul li:first").css("color","red");
+                // $("h2").hide();
+                $("h2").fadeOut();
+                // $("body").fadeOut();
+                // $("body").fadeIn();
+                // $("body").fadeToggle();
+                $("p:first").append("<br>Class Over");
+                $("p:last").prepend("Class Over<br>");
+            })
+        })
+
+        $(document).ready(function(){
+            $("h2").click(function(){
+                $(this).animate({
+                    left:"250px",
+                    height: "100px"
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!--
+        $ -> jquery object 
+        $("div").addClass("xyz"); 
+     -->
+
+    <h1>Heading 1</h1> 
+    <h2 style="display:inline;position: relative;">Heading 2</h2>
+    <ol>
+        <li>Apple1</li>
+        <li class="g1">Apple2</li>
+        <li>Apple3</li>
+    </ol>
+    <ul>
+        <li>PES1</li>
+        <li>PES2</li>
+        <li>PES3</li>
+    </ul>
+    <p style="position: relative;">Para 1</p>
+    <p>Para 2</p>
+    <p>para 3</p>
+    <button>Click Me!</button>
+</body>
+</html>

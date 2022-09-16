@@ -1,0 +1,53 @@
+/*
+one value :flex : auto -> auto sets 1 and 1 to grow and shrink
+                    initial -> takes min space doesnt observe any extra as auto
+                    inherit -> from parent element
+          :flex: 1(flex grow)(flex shrink is 1 and flex basis 0)
+two values :flex : 1 1 (here flex grow and flex shrink)          
+            :flex : 1 100px (here flex grow and flex basis)            
+three values :flex : 1 1 100px(flex grow,shrink and basis)
+if element is not flexible then flex-grow property has no effect
+flex basis: specifies the initital length of a flexible item
+flex grow: specifies how much the item will grow relative to rest of the flexible items
+(number|initial|inherit)
+flex shrink: specifies how the item will shrink relative to the rest of the flexible items inside the same container
+*/
+span {
+    display: flex;
+    width: 300px;
+    height: 200px;
+    border: 10px solid black;
+}
+span div {
+    /* flex: auto; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 25px;
+}
+div.one {
+    background: red;
+    flex-grow: 1;
+}
+div.two {
+    background: green;
+    flex-grow: 1;
+}
+div:nth-of-type(3) {
+    background: blue;
+    /* flex-basis: 100px; */
+    flex-grow: 1;
+}
+/*div.four {
+    background: chartreuse;
+}*/
+
+div:nth-of-type(4) {
+    flex-grow: 1;
+    background-color: chartreuse;
+    flex-basis: 50px;
+}
+
+div:nth-of-type(5) {
+    flex-grow: 1;
+    background-color: gold;
+}

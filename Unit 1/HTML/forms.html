@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <form method="post" action="survey.php" target="_blank">
+        <fieldset>
+        Name: <input type="text" size="50px" name="YourName" placeholder="Enter your name here" required/><br><br/>
+        Mobile: <input type="number" name="umob" pattern="[0-9]{10}">
+        Email: <input type="text" size="50px" name="emailId" placeholder="Enter your email id here"/><br><br/>
+        Address: <textarea rows="10" cols="15" placeholder="Enter your address here"></textarea><br>
+        </fieldset><br>
+           How many classes do you have? <input type="number"><br/><br/>
+           Which semester are you in? <input type="radio" value="sem1" name="semester"> 1st Sem <input type="radio" value="sem2" name="semester"> 2nd Sem <input type="radio" value="sem3" name="semester" checked/> 3rd Sem <input type="radio" value="sem4" name="semester"> 4th sem<br><br>
+           subjects:<input type="checkbox" name="subject" value="afll" name="subject"/>AFLL<input type="checkbox" value="web" name="subject"/>Web <br><br>
+           Section:
+           <select name="list" multiple><!--we can see all options with multiple-->
+                <option value="A">A</option>
+                <option value="B" selected>B</option><!--to select by default: selected-->
+                <option value="C">C</option>
+           </select><br><br>
+           <select name="list"><!--we can see all options with multiple-->
+            <option selected value="nil">Select one</option>
+            <option value="A">A</option>
+            <option value="B">B</option><!--to select by default: selected-->
+            <option value="C">C</option>
+            </select><br><br>
+        </form>
+        <!--superscript and subscript-->
+        log<sub>2</sub>2<sup>69</sup>=69 <br><br>
+        <fieldset>
+        <!--Email-->
+        Secondary Email: <input type="email" name="uemail" placeholder="Example@example.com"><br><br>
+        <!--range-->
+        How happy are you after joining PES: <input type="range" name="happines" min="0" max="69"><br><br>
+        <!-- url -->
+        Linkedn profile: <input type="url" name="link"><br><br>
+        <!-- color -->
+        Your favourite color: <input type="color" name="favcolor" id=""><br><br>
+        <!-- search -->
+        search: <input type="search" name="usearch"><br><br>
+        <!-- date -->
+        Enter DOB: <input type="date" name="" id=""><br><br>
+        </fieldset><br>
+        <!-- time -->
+        Time: <input type="time" name="" id=""><br><br>
+        <!-- <input type="button" value="Click here"><br><br> -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </body>
+</html>

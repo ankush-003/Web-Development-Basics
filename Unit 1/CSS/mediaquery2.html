@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Media query</title>
+    <style>
+        .eg {
+            padding: 20px;
+        }
+        @media only screen and (max-width:650px) {/* width less than 650 */
+            .eg {
+                font-size: 30px;
+                color: darkorange;
+            }
+        }
+        @media screen and (min-width:650px) {/*width 650 or grater */
+            .eg {
+                color: deeppink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Change the font size on changing size of screen</h2>
+    <div class="eg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi culpa dolor odit beatae laudantium vitae.</div>
+</body>
+</html>

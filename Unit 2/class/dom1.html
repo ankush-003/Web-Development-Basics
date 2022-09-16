@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="c01">PES</h1>
+        <p>PES have the following courses:</p>
+    <h2 class="c01">B.tech</h2>
+    <h2 class="c01">M.tech</h2>
+        <p>There are other courses</p>
+    
+    <script>
+        //getElementById:
+        document.getElementById("c01").innerHTML = "text changed!";
+
+        //getElementByClassName
+        var x = document.getElementsByClassName("c01");
+        x[0].innerHTML = "B.tech CSE";
+        x[1].innerHTML = "Exec M.tech"
+
+        //getElementByTagName
+        document.getElementsByTagName("p")[1].innerHTML = "Lorem ipsum"
+
+        //querySelector
+        document.querySelector(".c01").style.color = "red";
+
+        //querySelectorAll
+        var y = document.querySelectorAll(".c01");
+        for (let i = 0; i < y.length; i++) {
+            y[i].style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>

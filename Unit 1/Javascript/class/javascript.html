@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: whitesmoke;
+            font-size: 20px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Embedded:
+            <script type = "text/javascript">
+                ...
+            </script>
+        
+        External:
+            <script type = "text/javascript" src = "myscript.js" >
+            </script>        
+     -->
+     <script type = "text/javascript">
+        // document.write("hello","<br>");
+
+        // console.log("hello again")
+
+        // var a = 69; //type: number
+        // var b = 68;
+        // var c = true;
+        // var d;
+        // if(a>b)
+        // {
+        //     document.write(a)
+        //     console.log(typeof(a))
+        // }
+        // console.log(typeof(c));
+        // console.log(typeof(d));
+        
+        // var a1 = [1,2,3,4,5,6,7,8,9];
+        // console.log(a1);
+        // //document.write(a1);
+        // console.log(typeof(a1))
+        // // for(i = 0;i < 10;i++)
+        // // {
+        // //     document.write(a1[i]+"<br>");
+        // // } gives out of bound as undefined
+        // // for (i in a1)
+        // // {
+        // //     document.write(i + "<br>");
+        // // }
+        // var a2 = ['a','n','k','u','s','h'];
+        // document.write(a2,"<br>")
+        // function add(a,b)
+        // {
+        //     return a + b;
+        // }
+
+        // //document.write(add(60,9),"<br>")
+        // //push
+        // a1.push(10);
+        // a1.push(11);
+        // a1.pop(1);
+        // delete a1[2];
+        // //shift - without any input first element is shifted left
+        // a1.shift();
+        // a1.unshift();
+        // a1.reverse();
+        // //delete a1[1];
+        // // for(i in a1)
+        // // {
+        // //     display.write(i)
+        // // }
+        
+        // document.write(a1)
+        
+        var arr=[1,11,22,2,23,5];
+        var arr1=['a','b','c','d'];//string
+        //splice
+        arr.splice(0,0,'e','f');
+        document.write(arr,"<br>");
+        document.write(arr1,"<br>");
+        //indexof (zero indexed)
+        console.log(arr.indexOf(22));
+        document.write(arr,"<br>");
+        console.log(arr.slice(2,3));
+        arr2 = [1,11,22,2,23,5];
+        document.write(arr2.sort(),"<br>");
+        function sort1(a,b) {
+            return a-b;
+        }
+
+        document.write(arr2.sort(sort1));
+        //function mysort()
+        function sort2(a) {
+            for(i in a.slice(0,length(a)))
+            {
+                pos = i;
+                for(j=i;j<length(a);j++)
+                {
+                    if(a[pos]>a[j])
+                        pos = j;
+                }
+                if(pos!=i)
+                {
+                    temp = a[pos];
+                    a[pos] = a[j];
+                    a[j] = temp;
+                }
+            }
+            document.write(a);
+        }
+        sort2(arr2);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in HTML</title>
+    <style>
+        #t1,#t2 {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <button id="but1">Click Here!</button> <p>Current Mouse Postion: (X-<span id="xcoor"></span>) (Y-<span id="ycoor"></span>)</p>
+    <p id="para1">Something appears here on a doubleclick</p><br>
+    <p id="emptyp"></p>
+    <p id="p1">click me</p>
+    <form action="" name="general" method="post" target="_blank">
+        <fieldset>
+        <label for="text1">Field1 </label><input type="text" name="text1" id="field1"><br><br>
+        <label for="text2">Field2 </label><input type="text" name="text2" id="field2"><br><br>
+        <!-- <button id="but2">Copy Text</button><br><br>
+        <button>testing</button> -->
+        <input type="button" value="Copy Text" id="but2">
+        </fieldset>
+        <br>
+        <fieldset>
+        <img src="pesu.png" alt="PES" height="150px" width="100px" id="img1"><br><br>
+        <label for="text3">Keyboard </label><input type="text" name="text3" id="key1"><br><br>
+        <label for="text4">Enter Your Name </label><input type="text" name="text4" id="uname">
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="events3.js"></script>
+</body>
+</html>
