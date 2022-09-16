@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Location</title>
+    <script>
+        navigator.geolocation.getCurrentPosition(showPostion);
+        // Position Object properties: latitude, longitude, accuracy, altitude, altitudeAccuracy, heading, speed
+        function showPostion(position) {
+            document.querySelector("#display").innerHTML = "<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+        }
+        navigator.geolocation.watchPosition(function(position){
+            console.log("Your current position is: " + position.coords.latitude + ", " + position.coords.longitude);
+        });
+    </script>
+</head>
+<body>
+    <!-- 
+        Accessed via JavaScript through the navigator.geolocation object
+        -> getCurrentPosition(): returns the location of the visitor as a one-time snapshot
+        -> watchpPsition(): returns the location of the visitor every time the location changes
+        Parameters:
+            - Success callback Function
+            - error callback Function
+            - Geo location options object (optional)
+
+     -->
+     <h2>Your Current Position is:</h2>
+     <p id="display"></p>
+</body>
+</html>
