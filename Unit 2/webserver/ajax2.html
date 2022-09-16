@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery AJAX</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        function getData() {
+            $.ajax({url:"dequeue.c",method:'get',success:function(result){
+                $("#container").html(result);
+            }})
+        }
+    </script>
+    <style>
+        pre {
+            font-family: sans-serif;
+            border: 2px solid black; 
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+
+        syntax:
+            $.ajax({name:value, name:value,...})
+
+        $.get() method requests data from server.
+            syntax: $.get(URL,callback);    
+        $.get(url,[data],[callback]);
+        $.getJSON(url,[data],[callback]);
+        $.getScript(url,[data],[callback]);
+        
+        $.post  method:
+        syntax:
+            $.post(url,[data],[callback],[type]);
+        (internally uses $.ajax with method="post")    
+
+        $.load method:
+        allows HTML or text content to be loaded from a server and added into an existing DOM Element
+        syntax: 
+            $('Selector').load(url,[data],[callback],[type]);
+     -->
+     <button onclick="getData()">Get Data</button>
+     <pre id="container"></pre>
+     
+</body>
+</html>

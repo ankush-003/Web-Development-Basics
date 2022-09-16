@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loaddata() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get","sample.txt",true);// requesting server to send data from sample.txt
+            xhr.onreadystatechange = showdata;
+            xhr.responseType = "text";
+            xhr.send();
+        }
+        function showdata() {
+            if(this.readyState == 4 && this.status == 200)
+                document.querySelector("#demo").innerHTML = this.responseText;
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        SPA - Single page application
+        AJAX => asynchronous javascript and XML
+        request is sent with the help of XHR (XMLHttpRequest())
+        Server sends response in XML or JSON (JavaScript Object Notation)
+
+        open(method,url,[asynchronous]) -> initializes the request in preparation for sending to the server. The method parameter is the HTTP method to use (GET / POST)
+
+        readyState -> integer indicating state of request
+
+        send([body]) -> indicates the request to server, body parameter should contain the body of the request, it can also contain null for GET method.
+
+        responseText -> full response from the server as a string
+        responseXML -> a document object representing the server's response parsed as an XML document
+        response -> any other type of response received
+        
+        Javascript has a built in function for converting JSON strings into js object
+        	JSON.parse();
+        
+        Javascript also has a built in function for converting object int os string
+        	JSON.stringify();	
+     -->
+     <h2>Using the XMLHttpRequest Object</h2>
+     <h2>Response will be displayed here:</h2>
+     <p id="demo"></p>
+     <button type="button" onclick="loaddata()">change content</button><br><br>
+</body>
+</html>

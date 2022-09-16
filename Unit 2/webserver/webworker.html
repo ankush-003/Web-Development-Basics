@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+</head>
+<body>
+    <p>
+        a web worker is essentially a thread executing a javascript
+        <!-- sudo /opt/lampp/./manager-linux-x64.run -->
+    </p>
+    <p>Count Numbers:<output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+
+    <script>
+        var w;
+
+        function startWorker() {
+            w = new Worker("worker.js") // creating a web worker
+
+            w.onmessage = function(event) {
+                document.getElementById("result").innerHTML = event.data;
+                document.getElementById("result").style = "font-size:24px;color: red;text-shadow: 1px 1px 0.5px black"
+            }
+        }
+        function stopWorker() {
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+</body>
+</html>
