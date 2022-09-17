@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Workers</title>
+    <script type="text/javascript">
+        // 
+    </script>
+</head>
+<body>
+    <!-- 
+        A web worker is essentially a thread executing a JavaScript file
+        Makes it possible to execute a JavaScript file asynchronously and autonomously
+        helps achieve multi threading in web application
+        To create a web worker:
+            var worker = new Worker("filename.js")
+        Web Worker does not have access to the DOM of page.
+        It can listen for messages, using the onmessage even listener function.
+        send messages via postMessage()  
+        create timers using setTimeout(), sendInterval()  
+     -->
+     <p>Count Number: <output id="result"></output></p>
+     <button onclick="startWorker()">Start</button> <button onclick="stopWorker()">Stop</button>
+     <script>
+        var w;
+        function startWorker() {
+            w = new Worker("demo_worker.js");
+            w.onmessage = function(event){// continue to listen for messages until it i terminated;
+                e = event;
+                document.getElementById("result").innerHTML = event.data;
+            }
+        }
+        function stopWorker() {
+            w.terminate();
+            w = undefined;// so we can reuse
+        }
+     </script>
+</body>
+</html>
