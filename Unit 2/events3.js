@@ -68,7 +68,6 @@ function mMove(e){
 // Key Events - keydown, keyup, keypress
 var kd = document.querySelector("#key1");
 kd.addEventListener("keydown",kDown);
-document
 document.querySelector("#uname").addEventListener("keyup",kUp);
 
 function kDown() {

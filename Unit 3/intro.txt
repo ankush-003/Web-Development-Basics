@@ -1,0 +1,43 @@
+MERN Stack
+REACT.JS:
+-> Top Tier
+-> Front End Library
+-> The declarative JavaScript Library
+Node.Js and Express.Js 
+-> middle tier
+-> Server side
+Mongo DB:
+-> Database Server
+
+Intro To REACT.Js:
+-> Single-page Application
+-> created by Jordan Walke, first deployed in Facebook's newsfeed in 2011 and Instagram in 2012
+Two ways to use React:
+    i) use node package manager (npm)
+    ii) linking in script tag
+
+Two components:
+    i) Stateless Functional component
+    ii) Stateful Class component
+
+
+Key Terms:
+    i) Placeholder: a place where the component is loaded
+    ii) Create component: Stateful or Stateless
+    iii) Call component: ReactDOM.render()
+
+JSX: (JavaScript XML)
+-> Mixes HTML and JavaScript
+-> We are supposed to include Babel
+
+Babel:
+-> For using Babel: <script type="text/Babel">
+
+For creating React:
+	<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+
+For creating React DOM:
+	<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+	
+For Babel:
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>

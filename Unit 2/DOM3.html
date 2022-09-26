@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing DOM</title>
+</head>
+<body>
+    <!-- However, using the innerHTML causes the web browsers to reparse and
+        recreate all DOM nodes inside the div element. Therefore, it is less efficient
+        than creating a new element and appending to the div. In other words, creating a
+        new element and appending it to the DOM tree provides better performance
+        than the innerHTML. -->
+        <h2>Using Document Fragment</h2>
+        <button onclick="change()" >Click Here</button>
+        <div class="container"></div>
+    <script>
+        let div = document.querySelector('.container');
+        function change() {
+            // compose DOM nodes
+            let fragment = document.createDocumentFragment();
+            for (let i = 0; i < 100; i++) {
+                let p = document.createElement('p');
+                p.textContent = `Paragraph ${i}`;
+                fragment.appendChild(p);
+            }
+            // append the fragment to the DOM tree
+            div.appendChild(fragment);
+        }
+    </script>    
+</body>
+</html>

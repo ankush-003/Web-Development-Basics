@@ -3,7 +3,7 @@ i) Capturing phase starts from the top to target element.
 ii) Bubbling Phase goes from target to outer phase
 
 syntax:
-        elem.addEventListener("event",func_ref,flag);
+        element.addEventListener("event",func_ref,flag);
     flag = true => Handler registered for capturing phase
     flag = false => Handler registered for bubbling Phase (default)
 
@@ -31,6 +31,7 @@ function init() {
 }
 
 function handler(event) {
+    e = event;
     console.log(event.eventPhase + " " + event.target.id + " " + event.currentTarget.id);
     event.target.style = "color:green;text-shadow:1px 1px black;"
     // event.currentTarget.style = "color: blue;"
