@@ -24,9 +24,16 @@
         // }
 
         // Arrow Function
-        var Pesu = () => {return <h2>Writing Functions</h2>};
-        ReactDOM.render(<Pesu/>,document.getElementById("id01"));
+        // var Pesu = () => {return <h2>Writing Functions</h2>};
+        // ReactDOM.render(<Pesu/>,document.getElementById("id01"));
 
+        // Using Class
+        class Pesu extends React.Component{
+            render(){
+                return <h1>This is Class Example</h1>
+            }
+        }
+        ReactDOM.render(<Pesu/>,document.getElementById("id01"));
     </script>
     
 
