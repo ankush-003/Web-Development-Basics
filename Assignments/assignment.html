@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Game Store</title>
+    <style type="text/stylesheet" src="/assignmentStyle.css"></style>
+</head>
+<body>
+    <!-- <video controls id="trailer" poster="/poster.jpg">
+        <source src="/trailer.mp4" type="">
+        <h3>Video Not Supported</h3>
+    </video> -->
+    <!-- Using SVG Sprites -->
+    <svg id="stars" style="display: none;" version="1.1">
+        <symbol id="stars-empty-star" viewBox="0 0 102 18" fill="#F1E8CA">
+          <path
+            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"
+          />
+        </symbol>
+        <symbol id="stars-full-star" viewBox="0 0 102 18" fill="#FFBA01">
+          <path
+            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"
+          />
+        </symbol>
+        <symbol id="stars-half-star" viewBox="0 0 102 18" fill="#FFBA01">
+          <use xlink:href="#stars-empty-star" />
+          <path
+            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792"
+          />
+        </symbol>
+      </svg>
+      <svg aria-hidden="true" focusable="false" id="rating">
+        <use xlink:href="#stars-full-star" />
+        <use xlink:href="#stars-full-star" />
+        <use xlink:href="#stars-full-star" />
+        <use xlink:href="#stars-half-star" />
+        <use xlink:href="#stars-empty-star" />
+        <use xlink:href="#stars-empty-star" />
+      </svg>
+      
+</body>
+</html>

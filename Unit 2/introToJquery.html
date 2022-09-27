@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro To JQuery</title>
+    <script type="text/javascript" src="../jquery.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script>
+        // "*" selects all elements
+        $(document).ready(function(){
+            $("#but1").click(function() {
+                $("p:last").fadeOut();
+                $("p:last").fadeIn();
+                $("p:first").toggle();
+            })
+        })
+    </script>
+</head>
+<body>
+        <!-- 
+            Two methods to include : include library in web page or include from CDN(Content Delivery Network)
+
+            $("div").addClass("xyz");
+         -->
+         <h3 class="para">Testing</h3>
+         <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dolore?</p>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, illo!</p>
+         <button id="but1">Click Here</button>
+</body>
+</html>
