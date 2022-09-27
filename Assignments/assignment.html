@@ -5,40 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam Game Store</title>
-    <style type="text/stylesheet" src="/assignmentStyle.css"></style>
+    <link rel="stylesheet" href="/assignmentStyle.css">
 </head>
 <body>
-    <!-- <video controls id="trailer" poster="/poster.jpg">
-        <source src="/trailer.mp4" type="">
-        <h3>Video Not Supported</h3>
-    </video> -->
-    <!-- Using SVG Sprites -->
-    <svg id="stars" style="display: none;" version="1.1">
-        <symbol id="stars-empty-star" viewBox="0 0 102 18" fill="#F1E8CA">
-          <path
-            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"
-          />
-        </symbol>
-        <symbol id="stars-full-star" viewBox="0 0 102 18" fill="#FFBA01">
-          <path
-            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"
-          />
-        </symbol>
-        <symbol id="stars-half-star" viewBox="0 0 102 18" fill="#FFBA01">
-          <use xlink:href="#stars-empty-star" />
-          <path
-            d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792"
-          />
-        </symbol>
-      </svg>
-      <svg aria-hidden="true" focusable="false" id="rating">
-        <use xlink:href="#stars-full-star" />
-        <use xlink:href="#stars-full-star" />
-        <use xlink:href="#stars-full-star" />
-        <use xlink:href="#stars-half-star" />
-        <use xlink:href="#stars-empty-star" />
-        <use xlink:href="#stars-empty-star" />
-      </svg>
-      
+  <!-- Using SVG Sprites -->
+  <svg id="stars" style="display: none;" version="1.1">
+    <symbol id="stars-full-star" viewBox="0 0 102 18">
+      <path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218" />
+    </symbol>
+  
+    <symbol id="stars-half-star" viewBox="0 0 102 18">
+      <path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792" fill="#ffba01" />
+    </symbol>
+  
+    <symbol id="stars-all-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-full-star" />
+      <use xlink:href="#stars-full-star" transform="translate(21)" />
+      <use xlink:href="#stars-full-star" transform="translate(42)" />
+      <use xlink:href="#stars-full-star" transform="translate(63)" />
+      <use xlink:href="#stars-full-star" transform="translate(84)" />
+    </symbol>
+  
+    <symbol id="stars-0-0-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-all-star" fill="#9b9b9b" />
+    </symbol>
+  
+    <symbol id="stars-0-5-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-0-0-star" />
+      <use xlink:href="#stars-half-star" />
+    </symbol>
+  
+    <symbol id="stars-1-0-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-0-0-star" />
+      <use xlink:href="#stars-full-star" fill="#ffba01" />
+    </symbol>
+  
+    <symbol id="stars-1-5-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-1-0-star" />
+      <use xlink:href="#stars-half-star" transform="translate(21)" />
+    </symbol>
+  
+    <symbol id="stars-2-0-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-1-0-star" />
+      <use xlink:href="#stars-full-star" fill="#ffba01" transform="translate(21)" />
+    </symbol>
+  
+    <symbol id="stars-2-5-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-2-0-star" />
+      <use xlink:href="#stars-half-star" transform="translate(42)" />
+    </symbol>
+  
+    <symbol id="stars-3-0-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-2-0-star" />
+      <use xlink:href="#stars-full-star" fill="#ffba01" transform="translate(42)" />
+    </symbol>
+  
+    <symbol id="stars-3-5-star" viewBox="0 0 102 18">
+      <use xlink:href="#stars-3-0-star" />
+      <use xlink:href="#stars-half-star" transform="translate(63)" />
+    </symbol>
+  
+  </svg>
+  <main>
+    <div class="video">
+      <video controls id="trailer" poster="/poster.jpg">
+          <source src="/trailer.mp4" type="">
+          <h3>Video Not Supported</h3>
+      </video>
+    </div>  
+    <div id="heading">
+      <header><h1>Halo 2 Video Game</h1></header>
+      <p id="price">Price $50.00</p>
+      <p class="sale">On Sale! $40</p>
+      <div id="rating">
+        <svg class="icon">
+          <use xlink:href="#stars-3-5-star">
+        </svg>
+      </div>
+      <p class="sale">Hurry Only 9 Left!</p>
+    </div>
+    
+  </main>
+  <div id="features">
+    <h2>Game Features:</h2>
+    <ul>
+      <li>PC Settings/Optimizations: Halo 2: Anniversary is now optimized for PC and looking better than ever at up to 4k UHD and at 60+ FPS.* Other PC native settings include customizable mouse and keyboard support, ultrawide support, FOV customization, and more. </li><br>
+      <li>Campaign: Experience the next chapter in the Halo saga and fight your way through 15 unforgettable missions. Play as both Spartan-117, the Master Chief, and for the first time, the Covenant Elite, known as the Arbiter, and experience the Human-Covenant Conflict in a whole new way. </li><br>
+      <li>Anniversary Edition/Update: Toggle between the remastered graphics in the Anniversary edition and the graphics from the original Halo 2 campaign. In the Anniversary edition, view Blur Studio’s spectacularly remastered cutscenes from the original Halo 2 game. </li><br>
+      <li>Multiplayer: Continue your Halo adventure with 7 remastered multiplayer maps from Halo 2: Anniversary and 25 multiplayer maps from the original Halo 2, featuring a completely updated progression system.</li><br>
+    </ul>
+  </div>
+    
+    
+    
+   
 </body>
 </html>

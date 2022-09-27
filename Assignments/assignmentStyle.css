@@ -1,14 +1,73 @@
+body {
+	background-color: black;
+	color: aliceblue;
+}
 
-	use:nth-child(2) {
-	  position: absolute;
-	  left: 20px;
-	}
-	#rating:nth-child(3) {
-	  transform: translate(40px);
-	}
-	#rating:nth-child(4) {
-	  transform: translate(60px);
-	}
-	#rating:nth-child(5) {
-	  transform: translate(80px);
-	}
+
+main {
+	display: flex;
+	position: relative;
+	left: 5%;
+	top: 10%;
+}
+video {
+	width: 621px;
+	height: 350px;
+	border: 1px solid black;
+	box-shadow: 4px 4px whitesmoke;
+}
+div.video {
+	display: inline;
+}
+
+div#heading {
+	position: relative;
+	left: 2.5%;
+	font-family: sans-serif;
+}
+
+#price{
+	font-size: 21px;
+}
+
+header {
+	display: inline;
+	
+}
+
+header:hover {
+	text-shadow: 2px 1px 1.5px rgb(255, 179, 0);
+}
+
+.sale {
+	font-size: 28px;
+	color: crimson;
+	font-weight: bold;
+}
+
+#heading {
+	padding-left: 12px;
+	padding-bottom: 8px;
+	height: 350px;
+	width: 465px;
+	display: inline;
+	position: relative;
+	top: 10%;
+	border: 2px solid white;
+	border-radius: 8px;
+}
+
+#rating {
+	height: 90px;
+}
+
+#features {
+	padding: 10px;
+	margin-top: 25px;
+	width: 1120px;
+	position: relative;
+	left:5%;
+	border: 1px solid whitesmoke;
+	border-radius: 8px;
+	overflow: scroll;
+}
