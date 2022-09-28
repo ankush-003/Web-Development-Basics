@@ -1,5 +1,6 @@
 body {
-	background-color: black;
+	background-image: url("/halo-mcc.jpg");
+	height: 100%;
 	color: aliceblue;
 }
 
@@ -7,12 +8,12 @@ body {
 main {
 	display: flex;
 	position: relative;
-	left: 5%;
 	top: 10%;
+	margin: 12px;
 }
 video {
-	width: 621px;
-	height: 350px;
+	width: 820px;
+	height: 460px;
 	border: 1px solid black;
 	box-shadow: 4px 4px whitesmoke;
 }
@@ -32,7 +33,6 @@ div#heading {
 
 header {
 	display: inline;
-	
 }
 
 header:hover {
@@ -46,14 +46,14 @@ header:hover {
 }
 
 #heading {
-	padding-left: 12px;
-	padding-bottom: 8px;
-	height: 350px;
+	padding: 20px;
+	height: auto;
+	text-align: justify;
 	width: 465px;
 	display: inline;
 	position: relative;
 	top: 10%;
-	border: 2px solid white;
+	border: 4px solid white;
 	border-radius: 8px;
 }
 
@@ -62,12 +62,28 @@ header:hover {
 }
 
 #features {
+	background-color: black;
+	padding: 10px;
+	margin-top: 25px;
+	width: 1340px;
+	position: relative;
+	left: 1%;
+	border: 4px solid whitesmoke;
+	border-radius: 8px;
+	overflow: scroll;
+}
+
+#comments {
 	padding: 10px;
 	margin-top: 25px;
 	width: 1120px;
 	position: relative;
 	left:5%;
-	border: 1px solid whitesmoke;
+	border: 4px solid whitesmoke;
 	border-radius: 8px;
 	overflow: scroll;
+}
+
+a:link, a:visited {
+	color: coral;
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Intro</title>
+    <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+    <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+</head>
+<body>
+    <h3>Output 1</h3>
+    <p id="id01"></p>
+    <h3>Output 2</h3>
+    <p id="id02"></p>
+    <h3>Inserting Image</h3>
+    <div id="id03"></div>
+    <script type="text/babel">
+        class Hello extends React.Component {// class Name should be Uppercase
+            render() {
+                return(<div><h1 style={{color:"red"}}>Hello {this.props.refname}</h1>
+                    {this.props.children}</div>);
+            }
+        }
+        ReactDOM.render(<div><Hello refname="World"><p>Child of Hello</p></Hello><Hello refname="User!"/></div>,document.querySelector("#id01"));// wrap in an element is necessary
+
+        class Letter extends React.Component {
+            render() {
+                var letterStyle = {
+                    padding:"20px",
+                    margin:"20px",
+                    background:(this.props.bgc)?(this.props.bgc):"#001eff",
+                    color:"#333",
+                    display:"inline-block",
+                    boxShadow:"5px 5px 1px #ffe700",
+                };
+                return (
+                    <div style={letterStyle}>
+                        {this.props.children}
+                    </div>    
+                );
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <Letter bgc="#4deeea">A</Letter>
+                <Letter bgc="#74ee15">B</Letter>
+                <Letter>C</Letter>
+            </div>,document.querySelector("#id02")
+        )
+
+        class Image extends React.Component {
+            render() {
+                return(
+                    <div>
+                        <img src={this.props.imglink} width="300px"/>
+                    </div>    
+                )
+            }
+        }
+
+        class Link extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <a href={this.props.link}>{this.props.linkText}</a>    
+                    </div>
+                )
+            }
+        }
+
+        /*<Image imglink="/valo1.jpg"/>
+        <Link link="/intro.txt" linkText="This is Intro.txt"/>*/
+
+        class Combine extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Image {...this.props}/>
+                        <Link {...this.props}/>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<div><Combine imglink="/valo1.jpg" link="/intro.txt" linkText="this is Intro.txt"/><Combine/></div>,document.querySelector("#id03"));
+    </script>
+</body>
+</html>

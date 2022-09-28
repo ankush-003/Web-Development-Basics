@@ -7,7 +7,7 @@
     <title>Steam Game Store</title>
     <link rel="stylesheet" href="/assignmentStyle.css">
 </head>
-<body>
+<body onload="init()">
   <!-- Using SVG Sprites -->
   <svg id="stars" style="display: none;" version="1.1">
     <symbol id="stars-full-star" viewBox="0 0 102 18">
@@ -68,13 +68,14 @@
   </svg>
   <main>
     <div class="video">
-      <video controls id="trailer" poster="/poster.jpg">
+      <video controls id="trailer" poster="/poster.jpg" muted>
           <source src="/trailer.mp4" type="">
           <h3>Video Not Supported</h3>
       </video>
     </div>  
     <div id="heading">
       <header><h1>Halo 2 Video Game</h1></header>
+      <p id="details"></p>
       <p id="price">Price $50.00</p>
       <p class="sale">On Sale! $40</p>
       <div id="rating">
@@ -95,9 +96,12 @@
       <li>Multiplayer: Continue your Halo adventure with 7 remastered multiplayer maps from Halo 2: Anniversary and 25 multiplayer maps from the original Halo 2, featuring a completely updated progression system.</li><br>
     </ul>
   </div>
+  <div id="comments">
+    <p><a href="#">Write Reviews</a> | <a href="#">Read all Reviews</a></p>
+    <textarea name="ctext" id="ctext" cols="30" rows="10"></textarea>
+  </div>  
     
     
-    
-   
+   <script src="/assignmentScript.js"></script>
 </body>
 </html>
