@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Code</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div {
+            margin: 10px;
+            margin-top: 20px;
+            position: sticky;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        #para1 {
+            color: chocolate;
+            font-size: 28px;
+            font-family: 'Gill Sans';
+        }
+        button{
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <p id="para1">Intro To JQuery:</p>
+    </div>
+    <br>
+    <div id="div2">
+        <h3>The jQuery library contains the following features:</h3>
+        <ul id="list">
+            <li>HTML/DOM manipulation</li>
+            <li>CSS manipulation</li>
+            <li>HTML event methods</li>
+            <li>Effects and animations</li>
+            <li>AJAX</li>
+            <li>Utilities</li>
+        </ul>
+        <button id="view">View</button>
+    </div>
+    <div id="data">
+        <h3>Authors data:</h3>
+        <p id="res"></p>
+        <button id="get">Get Authors</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#div1").css("background","black");
+            $("#div1").css("color","white");
+            $("#div2").css("background","black");
+            $("#div2").css("color","white");
+            $("#data").css("background","black");
+            $("#data").css("color","white");
+            $("#para1").append("<ul><li>JQuery is a JavaScript Library</li><li>jQuery greatly simplifies JavaScript programming</li><li>jQuery is easy to learn</li></ul>").css("color","white");
+            $("#list").hide()    
+            $("#view").click(function(){
+                $("#list").toggle();
+            })
+            $("#get").click(function(){
+            $.ajax(
+                {
+                    url:"http://localhost/unit2_server/assignment/books.xml",
+                    dataType: 'xml',
+                    success: function(result){
+                    $(result).find("Author").each(function(){
+                        $("#res").append(this)    
+                        $("#res").append("<br>");
+                    })
+                }});
+            });
+        })
+    </script>
+</body>
+</html>

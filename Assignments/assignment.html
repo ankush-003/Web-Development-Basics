@@ -5,7 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam Game Store</title>
-    <link rel="stylesheet" href="/assignmentStyle.css">
+    <!-- <script type="text/javascript" ></script> -->
+    <style>
+      body {
+        background-image: url("/halo-mcc.jpg");
+        height: 100%;
+        color: aliceblue;
+      }
+
+
+      main {
+        display: flex;
+        position: relative;
+        top: 10%;
+        margin: 12px;
+      }
+      video {
+        width: 820px;
+        height: 460px;
+        border: 1px solid black;
+        box-shadow: 4px 4px whitesmoke;
+      }
+      div.video {
+        display: inline;
+      }
+
+      div#heading {
+        position: relative;
+        left: 2.5%;
+        font-family: sans-serif;
+      }
+
+      #price{
+        font-size: 21px;
+      }
+
+      header {
+        display: inline;
+      }
+
+      header:hover {
+        text-shadow: 2px 1px 1.5px rgb(255, 179, 0);
+      }
+
+      .sale {
+        font-size: 28px;
+        color: crimson;
+        font-weight: bold;
+      }
+
+      #heading {
+        padding: 20px;
+        height: auto;
+        text-align: justify;
+        width: 465px;
+        display: inline;
+        position: relative;
+        top: 10%;
+        border: 4px solid white;
+        border-radius: 8px;
+      }
+
+      #rating {
+        height: 90px;
+      }
+
+      #features {
+        background-color: black;
+        padding: 10px;
+        margin-top: 25px;
+        width: 1340px;
+        position: relative;
+        left: 1%;
+        border: 4px solid whitesmoke;
+        border-radius: 8px;
+        overflow: scroll;
+        display: flex;
+      }
+
+      #comments {
+        position: relative;
+        margin: 20px;
+      }
+
+      a:link, a:visited {
+        color: coral;
+      }
+
+      #ctext {
+        color: antiquewhite;
+        background-color: black;
+        font-size: 21px;
+      }
+    </style>
 </head>
 <body onload="init()">
   <!-- Using SVG Sprites -->
@@ -88,20 +180,33 @@
     
   </main>
   <div id="features">
-    <h2>Game Features:</h2>
+    <div>
+      <h3>Game Features:</h3>
     <ul>
       <li>PC Settings/Optimizations: Halo 2: Anniversary is now optimized for PC and looking better than ever at up to 4k UHD and at 60+ FPS.* Other PC native settings include customizable mouse and keyboard support, ultrawide support, FOV customization, and more. </li><br>
       <li>Campaign: Experience the next chapter in the Halo saga and fight your way through 15 unforgettable missions. Play as both Spartan-117, the Master Chief, and for the first time, the Covenant Elite, known as the Arbiter, and experience the Human-Covenant Conflict in a whole new way. </li><br>
       <li>Anniversary Edition/Update: Toggle between the remastered graphics in the Anniversary edition and the graphics from the original Halo 2 campaign. In the Anniversary edition, view Blur Studio’s spectacularly remastered cutscenes from the original Halo 2 game. </li><br>
       <li>Multiplayer: Continue your Halo adventure with 7 remastered multiplayer maps from Halo 2: Anniversary and 25 multiplayer maps from the original Halo 2, featuring a completely updated progression system.</li><br>
-    </ul>
+    </ul></div>
+    <div id="comments">
+      <p><a href="#">Write Reviews</a> | <a href="#">Read all Reviews</a></p>
+      <textarea name="ctext" id="ctext" cols="30" rows="10" placeholder="Enter Comments Here"></textarea>
+    </div>
+    
   </div>
-  <div id="comments">
-    <p><a href="#">Write Reviews</a> | <a href="#">Read all Reviews</a></p>
-    <textarea name="ctext" id="ctext" cols="30" rows="10"></textarea>
-  </div>  
-    
-    
-   <script src="/assignmentScript.js"></script>
+   <script>
+    function init() {
+      clip = document.querySelector("#trailer");
+      clip.addEventListener("mouseover",function() {
+          clip.play();
+      })
+      document.querySelector("header").addEventListener("click",function(){
+          document.querySelector("#details").innerHTML="a 2004 first-person shooter game developed by Bungie and published by Microsoft Game Studios for the Xbox console. The game features new weapons, enemies, and vehicles, and shipped with online multiplayer via Microsoft's Xbox Live service. In Halo 2's story mode, the player assumes the roles of the human Master Chief and alien Arbiter in a 26th-century conflict between the United Nations Space Command, the genocidal Covenant, and the parasitic Flood."
+        })
+      document.querySelector(".sale").addEventListener("click",function(){
+          alert("Hurry up, discount sale is going on!!!");
+        })
+    }
+   </script>
 </body>
 </html>
