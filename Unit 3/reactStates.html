@@ -8,6 +8,12 @@
     <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
     <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    <style>
+        body{
+            color: aliceblue;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     <!-- 
@@ -21,21 +27,29 @@
      -->
     <div id="id01"></div>
     <script type="text/babel">
+        // React attributes should Camel Case 
         class Counter extends React.Component {
             constructor() {
                 super()
-                    this.state={val:0}
+                    this.state={val:0};
             }
             render() {
                 return (
                     <div>
-                    <button onclick={this.dec}>-</button>
+                    <button onClick={this.dec}>-</button>
                     <input type="text" value={this.state.val}/>
-                    <button onclick={this.inc}>+</button>
+                    <button onClick={this.inc}>+</button>
                     </div>    
                 )
             }
+            inc=()=>{
+                this.setState({val:this.state.val+1})
+            }
+            dec=()=>{
+                this.setState({val:this.state.val-1})
+            }
         }
+        ReactDOM.render(<Counter/>,document.querySelector("#id01"));
     </script> 
 </body>
 </html>
