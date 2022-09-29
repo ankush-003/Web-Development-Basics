@@ -40,6 +40,7 @@
             }
             render() {
                 // <input type="text" value={this.state.val}/>
+                alert("This is rendering");
                 return (
                     <div>
                     <button onClick={this.dec}>-</button>
@@ -49,10 +50,12 @@
                 )
             }
             inc=()=>{
-                this.setState({val:this.state.val+1})
+                //this.setState({val:this.state.val+1})
+                this.myref.current.value++;
             }
             dec=()=>{
-                this.setState({val:this.state.val-1})
+                // this.setState({val:this.state.val-1})
+                this.myref.current.value--;
             }
         }
         ReactDOM.render(<Counter/>,document.querySelector("#id01"));
