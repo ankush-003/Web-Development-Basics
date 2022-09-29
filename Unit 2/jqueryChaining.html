@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaining in JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                // $("p").css("background","#ff3131");
+                // $("p").slideUp()
+                $("p").css("background","#ff3131").slideUp(2000).slideDown(2000);
+            })
+        })
+    </script>
+    <style>
+        .intro {
+            font-size: 125%;
+            color: cyan;
+        }
+        div {
+            border: 2px solid black;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Chaining</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, assumenda?</p>
+        <button>Click Me</button>
+    </div>
+</body>
+</html>

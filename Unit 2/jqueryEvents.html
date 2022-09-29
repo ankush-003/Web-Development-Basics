@@ -9,13 +9,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("p").append("<h3>sample Text</h3>");
+            $("p").append("<b>sample Text<b/>");//appended to paragraph
             $("p").after("<p> Appended Text </p>")
-            $("p").before("<h3> testing JQuery </h3>")
+            $("button#but1").click(function() {
+                // $("p").before("<h3> testing JQuery </h3>");
+                $("p:last").addClass("intro")
+            })
+
+            $("#but2").click(function() {
+                $("p.o2").css("background","black");
+                $("p.o2").css("color","white");
+                alert("Paragraph content: " + $("p.o2").text());// or .html
+            })
+
+            $("#but3").click(function() {
+                $("input:text").val("Ankush")
+            })
         })
     </script>
+    <style>
+        .intro {
+            font-size: 125%;
+            color: cyan;
+        }
+        div {
+            border: 2px solid black;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <p></p>
+    <div>
+    <h3>Output 1</h3>
+    <p>Paragraph</p>
+    <p>Paragraph2</p>
+
+    <button id="but1">Click Me</button>
+    </div>
+    <div>
+        <h3>Output 2</h3>
+        <p class="o2"></p>
+        <button id="but2">Click Me</button>
+    </div>
+    <div>
+        <h3>Output 3</h3>
+       Name: <input type="text">
+       <button id="but3">Default</button>
+    </div>
 </body>
 </html>
