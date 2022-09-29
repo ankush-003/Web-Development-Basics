@@ -28,16 +28,22 @@
     <div id="id01"></div>
     <script type="text/babel">
         // React attributes should Camel Case 
+        // To create alert we use reference
         class Counter extends React.Component {
             constructor() {
                 super()
-                    this.state={val:0};
+                    // Using states
+                    // this.state={val:0};
+
+                    //Using reference
+                    this.myref=React.createRef();
             }
             render() {
+                // <input type="text" value={this.state.val}/>
                 return (
                     <div>
                     <button onClick={this.dec}>-</button>
-                    <input type="text" value={this.state.val}/>
+                    <input type="text" ref={this.myref}/>
                     <button onClick={this.inc}>+</button>
                     </div>    
                 )
