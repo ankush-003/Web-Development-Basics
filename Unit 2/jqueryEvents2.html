@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            height: 100%;
+        }
+        main {
+            position: relative;
+            background-color: black;
+            color: white;
+            padding: 2em;
+            margin: 2em;
+            border: 0.5em solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Events: click(),bind()(attaches one or more event handlers),unbind()[bind and unbind are replaced with on method] -->
+    <!-- manually triggering event -> $("").click() -->
+    <header>Learning Events in JQuery</header><br><button id="but1">Learn</button>
+    <main>
+        <h1>Header1</h1>
+        <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, perferendis?</p>
+        <p id="para2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis voluptatum corrupti a laborum nobis nulla nisi mollitia, et iusto officia.</p>
+        <button id="but2">Hide</button>
+    </main>
+    <script>
+        $(document).ready(function() {
+
+            $("p").bind("click",function() {
+                alert("clicked para: " + $(this).attr("id"))
+            })
+            $("button#but2").on("click",function() {
+                // $("p").fadeOut("slow",function() {
+                //     $(this).fadeTo("slow");
+                // })
+                value = $("button#but2").text()
+                $("p").fadeToggle("slow",function(){
+                    if(value == "Hide"){$("button").text("Show")}
+                    else {$("button#but2").text("Hide")}
+                    $(this).animate({left: '50px'})
+                });
+                $("h1").slideToggle("slow")
+            })
+            // unbind can be used to remove listener
+            $("#but1").click(function() {
+                $("main").animate({
+                    height: '+=150px',
+                    // opacity: 0.5,
+                    top: '200px',
+                },"slow");
+            })
+        })
+    </script>
+</body>
+</html>

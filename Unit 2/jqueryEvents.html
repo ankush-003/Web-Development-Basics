@@ -12,28 +12,58 @@
             $("p").append("<b>sample Text<b/>");//appended to paragraph
             $("p").after("<p> Appended Text </p>")
             $("button#but1").click(function() {
-                // $("p").before("<h3> testing JQuery </h3>");
+                $("p").before("<h3> testing JQuery </h3>");
                 $("p:last").addClass("intro")
             })
 
             $("#but2").click(function() {
-                $("p.o2").css("background","black");
-                $("p.o2").css("color","white");
+                $("p.o2").css("background","white");
+                $("p.o2").css("color","black");
                 alert("Paragraph content: " + $("p.o2").text());// or .html
             })
 
             $("#but3").click(function() {
                 $("input:text").val("Ankush")
             })
+
+            // $(":text").focus(function(){
+            //     $(this)
+            //     .css("background","black")
+            //     .css("color","white");
+            // })
+            // .blur(function(){
+            //     $(this)
+            //     .css("background","white")
+            //     .css("color","black");
+            // })
+            // Adding multiple event listeners
+            $(":text").on({
+                focus:function() {
+                    $(this)
+                    .css("background","black")
+                    .css("color","white");
+                },
+                blur:function() {
+                    $(this)
+                    .css("background","white")
+                    .css("color","black");
+                }
+            })
+
+
         })
     </script>
     <style>
+        body {
+            color: white;
+            background-color: black;
+        }
         .intro {
             font-size: 125%;
             color: cyan;
         }
         div {
-            border: 2px solid black;
+            border: 2px solid white;
             border-radius: 12px;
             padding: 12px;
             margin: 10px;
