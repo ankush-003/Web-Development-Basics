@@ -33,7 +33,8 @@
     </main>
     <script>
         $(document).ready(function() {
-            myPromise = new Promise(function(resolve,reject) {
+            $("#but1").click(async function() {
+                let myPromise = new Promise(function(resolve,reject) {
                     let user = $(":text").val()
                     if(user === "Ankush") {
                         resolve();
@@ -42,8 +43,6 @@
                         reject(new Error("You are not the SuperUser"));
                     }
                 })
-            $("#but1").click(function() {
-                
                 myPromise
                 .then(function(){
                     $("div")
