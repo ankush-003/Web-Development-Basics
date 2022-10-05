@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Communication</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>XHR Object Properties and Methods</h2>
+        <ul>
+            <h3>readyState:</h3>
+            <li>0 -> Uninitialised</li>
+            <li>1 -> Loading</li>
+            <li>2 -> Response Headers received</li>
+            <li>3 -> some response body received</li>
+            <li>4 -> Request Complete</li>
+        </ul>
+    </header>
+    <main>
+        <div id="data"></div>
+        <br>
+        <button id="but1">Get Data</button>
+    </main>
+    <script>
+        document.querySelector("#but1").addEventListener("click",function() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET",'/unit2_server/command.txt',true);
+            xmlhttp.onreadystatechange = handler;
+            xmlhttp.responseType = "text";
+            xmlhttp.send();
+
+            function handler() {
+                console.log("readyState value: " + this.readyState + " status: " + this.status);
+                if(this.readyState == 4 && this.status == 200) {
+                    document.querySelector("#data").innerHTML = this.response;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
