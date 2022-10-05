@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promises in JS</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        main {
+            margin: 0.5em;
+            border: 0.1em solid red;
+            height: 250px;
+            padding: 0.5em;
+        }
+        div {
+            position: relative;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Learning Promises</h1>
+    </header>
+    <main>
+        <label for="text">Enter Text </label>&nbsp;<input type="text" name="text">
+        <button id="but1">Check User</button>
+        <div id="result"></div>
+    </main>
+    <script>
+        $(document).ready(function() {
+            myPromise = new Promise(function(resolve,reject) {
+                    let user = $(":text").val()
+                    if(user === "Ankush") {
+                        resolve();
+                    }
+                    else {
+                        reject(new Error("You are not the SuperUser"));
+                    }
+                })
+            $("#but1").click(function() {
+                
+                myPromise
+                .then(function(){
+                    $("div")
+                    .css({border:'2px double white'})
+                    .animate({
+                        width: '200px',
+                        left: "40%",
+                        margin: "20px",
+                        padding:'20px'
+
+                    },"slow").text("You are the SuperUser");
+
+                })
+                .catch(function(error){
+                    $("div").animate({
+                        border:"0.1em solid red",
+                        height: '200px'
+                    },"slow").text(error.message);
+                })
+            })
+        })
+    </script>
 </body>
 </html>
