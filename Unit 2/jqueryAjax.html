@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to JQuery AJAX</title>
+    <style>
+        body {
+            background-color: black;
+            color: azure;
+        }
+        div {
+            border: 0.2em orange;
+            border-style: ridge;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>JQuery AJAX Methods</h1>
+        <ul>
+            <li>$.ajax</li>
+            <li>$.get</li>
+            <li>$.post</li>
+            <li>$("element").load</li>
+        </ul>
+    </header>
+    <main>
+        <button id="but1">AJAX</button>
+        <button id="but2">GET</button>
+        <button id="but3">POST</button>
+        <button id="but4">LOAD</button>
+        <div id="ajax"></div>
+        <div id="get"></div>
+        <div id="post"></div>
+        <div id="load"></div>
+    </main>
+    <script>
+        // AJAX Method:
+        $("#but1").click(function() {
+                $.ajax({
+                url:'ajax.txt',
+                method: 'GET',
+                success: function(result,status) {
+                    alert("Status: " + status);
+                    $("#ajax").html("<pre>" + result + "</pre>");
+                },
+                error: function(error) {
+                    $("#ajax").text(error);
+                }
+            })
+        })
+        // GET Method:
+        $("#but2").click(function(){
+            $.get("get.txt", function(data, status){
+                alert("Status: " + status);
+                $("#get").html("<pre>" + data + "</pre>");
+            });
+        });
+        // POST Method
+        // syntax: $.post(url,[data],[callback],[type])
+        $("#but3").click(function(){
+            $.post("post.txt",{data:"data to be posted"}, function(data, status){
+                alert("Status: " + status);
+                $("#post").html("<pre>" + data + "</pre>");
+            },"text");
+        });
+        // LOAD Method
+        $("#but4").click(function(){
+            $("#load").load("load.txt", function(responseTxt, statusTxt, xhr){
+                if(statusTxt == "success")
+                alert("External content loaded successfully!");
+                if(statusTxt == "error")
+                alert("Error: " + xhr.status + ": " + xhr.statusText);
+
+                $("#load").html("<pre>" + responseTxt + "</pre>");
+            });
+        }); 
+    </script>
+</body>
+</html>

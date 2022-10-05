@@ -1,0 +1,3 @@
+The $.post() method loads data from the server using a HTTP POST request.
+Syntax
+$(selector).post(URL,data,function(data,status,xhr),dataType)

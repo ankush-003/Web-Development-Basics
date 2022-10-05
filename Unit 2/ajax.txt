@@ -1,0 +1,19 @@
+$.ajax() ->	Performs an async AJAX request
+$.ajaxPrefilter() ->	Handle custom Ajax options or modify existing options before each request is sent and before they are processed by $.ajax()
+$.ajaxSetup() ->	Sets the default values for future AJAX requests
+$.ajaxTransport() ->	Creates an object that handles the actual transmission of Ajax data
+$.get() -> Loads data from a server using an AJAX HTTP GET request
+$.getJSON() ->	Loads JSON-encoded data from a server using a HTTP GET request
+$.parseJSON() ->	Deprecated in version 3.0, use JSON.parse() instead. Takes a well-formed JSON string and returns the resulting JavaScript value
+$.getScript() ->	Loads (and executes) a JavaScript from a server using an AJAX HTTP GET request
+$.param() ->	Creates a serialized representation of an array or object (can be used as URL query string for AJAX requests)
+$.post() ->	Loads data from a server using an AJAX HTTP POST request
+ajaxComplete() -> 	Specifies a function to run when the AJAX request completes
+ajaxError() ->	Specifies a function to run when the AJAX request completes with an error
+ajaxSend() -> Specifies a function to run before the AJAX request is sent
+ajaxStart() ->	Specifies a function to run when the first AJAX request begins
+ajaxStop() ->	Specifies a function to run when all AJAX requests have completed
+ajaxSuccess() ->	Specifies a function to run when an AJAX request completes successfully
+load() -> Loads data from a server and puts the returned data into the selected element
+serialize() ->	Encodes a set of form elements as a string for submission
+serializeArray() -> Encodes a set of form elements as an array of names and values

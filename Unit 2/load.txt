@@ -1,1 +1,18 @@
 load method shows network errors too others show only http errors
+
+The jQuery load() method is a simple, but powerful AJAX method.
+
+The load() method loads data from a server and puts the returned data into the selected element.
+Syntax:
+$(selector).load(URL,data,callback);
+
+The required URL parameter specifies the URL you wish to load.
+
+The optional data parameter specifies a set of querystring key/value pairs to send along with the request.
+
+The optional callback parameter is the name of a function to be executed after the load() method is completed
+The optional callback parameter specifies a callback function to run when the load() method is completed. The callback function can have different parameters:
+
+    responseTxt - contains the resulting content if the call succeeds
+    statusTxt - contains the status of the call
+    xhr - contains the XMLHttpRequest object
