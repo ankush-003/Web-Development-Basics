@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>React</title>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		
+	</head>
+	<body>
+
+		<div id="id01"></div>
+		<script type="text/babel">
+			
+			class Demo extends React.Component{
+				constructor(props){
+					super(props);
+					this.state={value:""}
+				}
+				
+				handleChange(event){
+					this.setState({value:event.target.value})
+				}
+				
+				handleSubmit(event){
+					alert("the entered data is: "+this.state.value);
+					event.preventDefault();
+				}
+				// on using name we get name suggestions
+				render(){
+					return(
+						<div>
+							<form onSubmit={this.handleSubmit.bind(this)}>
+							<label>Username: </label>
+							<input type="text" onChange={this.handleChange.bind(this)} name="uname"/>
+							<button>Click</button>
+							</form>
+						</div>
+					);
+				}
+			
+			}
+				
+			ReactDOM.render(<Demo/>,document.getElementById("id01"))
+
+		</script>
+	</body>
+</html>
