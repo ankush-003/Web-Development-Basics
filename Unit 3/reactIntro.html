@@ -8,8 +8,52 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        div {
+            border: 0.2em solid orange;
+            border-radius: 8px;
+            padding: 0.5em;
+            margin: 2em;
+        }
+    </style>
 </head>
 <body>
-    
+    <h2>Using JSX</h2>
+    <div id="root1"></div>
+    <h2>Without JSX</h2>
+    <div id="root2"></div>
+    <h2>Components</h2>
+    <h3>Function based</h3>
+    <div id="root3"></div>
+    <h3>Class Based</h3>
+    <div id="root4"></div>
+    <script type="text/babel">
+        // Using JSX
+        const root = ReactDOM.createRoot(document.getElementById('root1'));
+        root.render(<h2>JSX version</h2>);
+        // ReactDOM.render(<h2>JSX version</h2>,document.getElementById("root1"));
+
+        // Without JSX
+        ReactDOM.render(React.createElement("h2","null","Non-JSX"),document.getElementById("root2"))
+
+        // Components
+        // Function Based
+        function Welcome() {
+            return <h2>Welcome to function based Component</h2>;
+        };
+        ReactDOM.render(<Welcome/>,document.getElementById("root3"))
+
+        // Class based
+        class WelcomeBack extends React.Component {
+            render() {
+                return <h2>Welcome to PES University</h2>;
+            }
+        }
+        ReactDOM.render(<WelcomeBack/>,document.getElementById("root4"));
+    </script>
 </body>
 </html>
