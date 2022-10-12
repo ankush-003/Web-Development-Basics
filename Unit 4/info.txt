@@ -1,0 +1,4 @@
+-> npm init
+-> npm install validator
+-> url: https://nodejs.org/dist/latest-v12.x/docs/api/
+-> to use module: var val = require('validator')
