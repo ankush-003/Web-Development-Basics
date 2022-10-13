@@ -16,6 +16,12 @@
             padding: 0.5em;
             margin: 2em;
         }
+        .div1 {
+            border: 0.2em ridge greenyellow;
+        }
+        .div2 {
+            border: 0.2em ridge red;
+        }
     </style>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
@@ -28,14 +34,27 @@
     <script type="text/babel">
         // Using arrow function
         const Header = () => {
+            const myStyle = {
+                    backgroundColor: "white",
+                    color:"black",
+                };
             return(
-                <div>
+                <div style={myStyle}>
                 <h1 style={{backgroundColor: "red"}}>Hello style!</h1>
                 <p>Adding style in React</p>
                 </div>
             );
         }
-        ReactDOM.render(<Header/>,document.getElementById("root"))
+        class Header2 extends React.Component {
+            render() {
+                return (
+                    <div className = {this.props.type}>
+                        <h1>{this.props.children}</h1>
+                    </div>    
+                )
+            }
+        }
+        ReactDOM.render(<><Header/><Header2 type="div1">Using Class Component</Header2></>,document.getElementById("root"))
     </script>
 </body>
 </html>

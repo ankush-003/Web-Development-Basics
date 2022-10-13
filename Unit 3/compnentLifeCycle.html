@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Life Cycle</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        div {
+            border: 0.2em solid orange;
+            border-radius: 8px;
+            padding: 0.5em;
+            margin: 2em;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Mount</h2>
+        <h2>Update</h2>
+        <h2>Unmount</h2>
+        <ul>
+            <li>componentWillMount()</li>
+            <li>constructor()</li>
+            <li>render()</li>
+            <li>componentDidMount()</li>
+            <li>componentWillReceiveProps(nextProps)</li>
+            <li>shouldComponentUpdate()</li>
+            <li>componentWillUpdate()</li>
+            <li>componentDidUpdate()</li>
+            <li>componentWillUnmount()</li>
+        </ul>
+    </div>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Hello extends React.Component {
+            constructor(props) {
+                super(props);
+                console.log("In constructor");
+                this.state = {
+                    name:"Ankush",
+                    college:"PES",
+                    srn:"91"
+                }
+            }
+
+            // UNSAFE to prevent error
+            UNSAFE_componentWillMount() {
+                console.log("In componentWIllMount");
+            }
+
+            componentDidMount() {
+                console.log("In componentDidMount");
+            }
+
+            componentDidUpdate(prevProps,prevState) {
+                console.log("In componentDidUpdate with arguments : " + prevState.college);
+            }
+
+            shouldComponentUpdate(nextProps,nextState) {
+                console.log("In shouldComponentUpdate with arguments " + nextState.college);
+                return true;// false to prevent update
+            }
+
+            UNSAFE_componentWillUpdate() {
+                console.log("In ComponentWillUpdate!")
+            }
+
+            componentWillUnmount() {
+                console.log("In componentWillUnmount!");
+            }
+
+            updateState = () => {
+                console.log("In updateState!");
+                this.setState({srn:"PES1UG21CS091",college:"PES FML!"});
+            }
+
+            deleteComp = () => {
+                console.log("In deleteComp!");
+                ReactDOM.unmountComponentAtNode(document.getElementById("root"));
+            }
+
+            render() {
+                console.log("In render!");
+                return (
+                    <>
+                    <h1>Hello {this.state.name}</h1>
+                    <p>I am studying at {this.state.college}, SRN:{this.state.srn} </p>
+                    <button onClick = {this.updateState}>Click Here to update State</button>
+                    <button onClick = {this.deleteComp}>Click here to delete Component</button>
+                    </>
+                );
+                    
+            }
+        }
+        ReactDOM.render(<Hello/>,document.getElementById("root"))
+    </script>
+</body>
+</html>

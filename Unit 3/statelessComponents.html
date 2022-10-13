@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stateless Components</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            height: 100%;
+        }
+        div {
+            border: 0.2em solid orange;
+            border-radius: 12px;
+            padding: 0.5em;
+            margin: 2em;
+            text-align: center;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        /* function Sample() {
+            return(
+                <h1>Welcome To stateless Componemts</h1>
+            )
+        } */
+        
+        /* const Sample = () => {
+            return(<h1>Welcome To stateless Componemts</h1>)
+        } */
+
+        function Sample(props) {
+            return(
+                <Welcome>{props.children} {props.user}</Welcome>
+            )
+        }
+
+        function Welcome(props) {
+            return (
+                <h1>{props.children}</h1>
+            )
+        }
+
+        // ReactDOM.render(<Sample/>,document.getElementById("root"))
+
+        ReactDOM.render(
+            <>
+            <Sample user="Ankush">Hola!</Sample>
+            <Sample user="Ankush">Welcome Home</Sample></>,
+            document.getElementById("root"))
+    </script>
+</body>
+</html>

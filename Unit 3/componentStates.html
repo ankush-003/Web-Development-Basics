@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component States</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        div {
+            border: 0.2em solid orange;
+            border-radius: 8px;
+            padding: 0.5em;
+            margin: 2em;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Hello extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    "name":"Ankush",
+                    college:"PES",
+                }
+            }
+
+            changeState = () => {
+                this.setState({
+                    college:"PES FML!"
+                })
+            }
+
+            render() {
+                return(
+                    <>
+                    <h1>I am {this.state.name}</h1>
+                    <p>I am studying at {this.state.college}</p>
+                    <button onClick={this.changeState}>Click Here to Change State!</button>
+                    </>
+                )
+            }
+        }
+        // props are immutable
+        // states can be used in functions with the help of hooks
+        ReactDOM.render(<Hello/>,document.getElementById("root"));
+    </script>
+</body>
+</html>

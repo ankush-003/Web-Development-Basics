@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock using React</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            height: 100%;
+        }
+        div {
+            border: 0.2em solid orange;
+            border-radius: 12px;
+            padding: 0.5em;
+            margin: 2em;
+            text-align: center;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    time:new Date(),
+                    count:0,
+                    msg:"",
+                }
+            }
+
+            tick = () => {
+                this.setState({
+                    time:new Date(),
+                    count:this.state.count + 1,
+                })
+                if (this.state.count > 10) {
+                    this.setState({
+                        msg:this.state.msg + "Clock Died!",
+                    }) 
+                }
+            }
+
+            render() {
+                // setInterval(this.tick,1000)
+                if (this.state.count < 10) {
+                    setTimeout(this.tick,1000);
+                }
+                return(
+                    <>
+                    <h1>{this.state.time.toLocaleTimeString()}</h1>
+                    <h2>{this.state.msg}</h2>
+                    </>
+                )
+            }
+
+        }
+        ReactDOM.render(<Clock/>,document.getElementById("root"))
+    </script>
+</body>
+</html>
