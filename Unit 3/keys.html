@@ -26,18 +26,23 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        const arr = ["book1","book2","book3"];
-        // function BookList(props) {
-        //     return(
-        //         <ul>
-        //             <li>{props.books[0]}</li>
-        //             <li>{props.books[1]}</li>
-        //             <li>{props.books[2]}</li>
-        //         </ul>
-        //     )
-        // }
-        // ReactDOM.render(<BookList books = {arr}/>,document.getElementById("root"))
-        
+        const arr = ["book4","book1","book2","book3"];
+        function BookList(props) {
+            // return(
+                // <ul>
+                //     <li>{props.books[0]}</li>
+                //     <li>{props.books[1]}</li>
+                //     <li>{props.books[2]}</li>
+                // </ul>
+            // )
+            const book_lists = props.books;
+            const b = book_lists.map((book,index)=>
+            (<li key={index}>{book}</li>))
+            return (
+                <ul>{b}</ul>
+            )
+        }
+        ReactDOM.render(<BookList books = {arr}/>,document.getElementById("root"))
     </script>
 </body>
 </html>
