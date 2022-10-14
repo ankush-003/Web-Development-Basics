@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cart</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            background-color: #12232E;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let laptops = [
+            {
+                name:"ASUS Vivobook 15", description:"15.6-inch (39.62 cms) FHD, AMD Ryzen 7 3700U, Thin and Light Laptop (16GB/512GB SSD/Integrated Graphics/Windows 11/Office 2021/Silver/1.8 kg)", price:49700, quantity:0,
+            },
+            {
+                name:"Lenovo IdeaPad ", description:"AMD Ryzen 3 3250U 15.6(39.62cm) FHD Thin & Light Laptop (8GB/512GB SSD/Windows 11/Office 2021/3months Game Pass/Cloud Grey/1.6Kg)", price:31017, quantity:0,
+            },
+            {
+                name:"Samsung Galaxy Book", description:"Intel 12th Gen core i5 39.6cm (15.6) FHD LED Thin & Light Laptop (8 GB/512 GB SSD/Windows 11/MS Office/Backlit Keyboard/Finger Print Reader/Silver/1.55Kg)", price:57990, quantity:0,
+            }
+        ]
+        class Product extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    orderedDate: new Date('2022-10-15'),
+                    deliveryDate: new Date('2022-10-17'),
+                    totalPrice: 0,
+                }
+            }
+            render() {
+                const list = laptops.map()
+                return(
+
+                )
+            }
+        }
+    </script>
+</body>
+</html>
