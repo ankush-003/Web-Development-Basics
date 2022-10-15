@@ -24,6 +24,10 @@
             width: 400px;
         }
         .summary {
+            position: relative;
+            text-align: center;
+            padding: 0.5em;
+            border: 0.2em ridge #FC2E20;
             margin: 6em;
             color: #FC2E20;
         }
@@ -95,7 +99,7 @@
                 }
                 const list = laptops.map((laptop,index)=>(<div className = "container" key={laptop.name} style={containerStyle}>
                         <img src={laptop.image} alt={laptop.name}/>
-                        <div style={infoStyle}><h1>{laptop.name}</h1><p>Description: {laptop.description}<br/><br/>Price: Rs.{laptop.price}<br/>Quantity: {this.state.quantity[index]}</p><button onClick={() => {this.handleClick(laptop.price,index)}}>Add to Cart</button>
+                        <div style={infoStyle}><h1>{laptop.name}</h1><p>Description: {laptop.description}<br/><br/><span style={{color:"red"}}>Price: Rs.{laptop.price}<br/>Quantity: {this.state.quantity[index]}</span></p><button onClick={() => {this.handleClick(laptop.price,index)}}>Add to Cart</button>
                         </div>
                     </div>));
                 
