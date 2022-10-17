@@ -85,7 +85,7 @@
                 this.setState({quantity:this.state.quantity,totalPrice:this.state.totalPrice,deliveryDate: this.state.deliveryDate});
             }
             componentDidUpdate = () => {
-                alert("Total Amount: " + this.state.totalPrice + "\nExpected Delivery Date: " + this.state.deliveryDate.getDate()+"/"+this.state.deliveryDate.getMonth()+"/"+this.state.deliveryDate.getFullYear())
+                alert("Total Amount: " + this.state.totalPrice + "\nExpected Delivery Date: " + this.state.deliveryDate.getDate()+"/"+this.state.deliveryDate.toString()+"/"+this.state.deliveryDate.getFullYear())
             }
             render() {
                 const containerStyle = {
