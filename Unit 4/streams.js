@@ -15,7 +15,7 @@ readableStream.on('end', function() {
 // writing to streams
 
 var readStream = fs.createReadStream("input.txt");
-var writeStream = fs.createWriteStream("output.txt");
+var writeStream = fs.createWriteStream("output.txt",'utf-8');
 readStream.setEncoding('UTF8');
 readStream.on('data', function(chunk) {
     writeStream.write(chunk);
