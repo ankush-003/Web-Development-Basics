@@ -1,0 +1,20 @@
+Command to run mongodb compass:
+
+mongodb-compass
+
+running mongodb server:
+
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+
+stopping mongodb server:
+
+sudo systemctl stop mongod
+
+restarting mongodb server:
+
+sudo systemctl restart mongod
+
+mongosh
+
