@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        /* * means any class that starts with col */
+        [class*="col"] {
+            background-color: #333;
+            padding: 1rem;
+            color: azure;
+            border: 2px ridge orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container border border-warning rounded">Content</div><br>
+    <div class="conatiner-fluid border">Hola</div><br>
+    <div class="container-lg border">Container-Fluid till Large</div>
+    <div class="container-md border border-warning rounded">
+        <div class="row align-items-center" style="height:500px;">
+            <div class="col">COl 1</div>
+            <div class="col-5">COl 2</div>
+            <div class="col">COl 3</div>
+            <div class="col">COl 4</div>
+            <!-- <div class="col">COl 1</div> -->
+        </div>  <br>
+        <div class="row">
+            <div class="col-lg-8 col-md-6">col 1</div>
+            <div class="col-lg-4 col-md-6">col 2</div>
+        </div> 
+        <div class="row" style="height: 200px ;">
+            <div class="col align-self-start">
+              One of three columns
+            </div>
+            <div class="col align-self-center">
+              One of three columns
+            </div>
+            <div class="col align-self-end">
+              One of three columns
+            </div> 
+        </div>   
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
