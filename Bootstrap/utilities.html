@@ -15,12 +15,51 @@
 </head>
 <body>
     <div class="container border border-2 border-warning my-5 mx-auto rounded rounded-3 bg-danger bg-gradient w-75 p-4">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates sit doloremque nisi atque, amet eaque laudantium doloribus eligendi delectus commodi praesentium? Sunt autem atque commodi sit suscipit corrupti illum. Impedit mollitia nulla, vero numquam commodi rem voluptates minus neque rerum culpa consectetur doloremque est incidunt. Provident eos quisquam praesentium doloribus pariatur facere. Facere laudantium maiores dolorum odit dignissimos, commodi ipsam, eos ipsum aliquid quaerat consequuntur repellendus illo accusantium ut quia? Adipisci quia sed ad assumenda sint harum culpa placeat cumque soluta asperiores debitis vero, odio sunt in possimus repudiandae eligendi. Harum distinctio magni at veritatis autem iste, laborum sit.</p>
-        <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellendus repudiandae delectus voluptatum autem esse ullam distinctio nisi officia recusandae.</p>
+        <p class="user-select-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates sit doloremque nisi atque, amet eaque laudantium doloribus eligendi delectus commodi praesentium? Sunt autem atque commodi sit suscipit corrupti illum. Impedit mollitia nulla, vero numquam commodi rem voluptates minus neque rerum culpa consectetur doloremque est incidunt. Provident eos quisquam praesentium doloribus pariatur facere. Facere laudantium maiores dolorum odit dignissimos, commodi ipsam, eos ipsum aliquid quaerat consequuntur repellendus illo accusantium ut quia? Adipisci quia sed ad assumenda sint harum culpa placeat cumque soluta asperiores debitis vero, odio sunt in possimus repudiandae eligendi. Harum distinctio magni at veritatis autem iste, laborum sit.</p>
+        <p class="py-3 user-select-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellendus repudiandae delectus voluptatum autem esse ullam distinctio nisi officia recusandae.</p>
         
         <img src="https://picsum.photos/500/300" class="d-block rounded mx-auto mb-2" alt="">
 
         <div class="bg-dark w-50 mx-auto"><p class="text-warning text-center">Centered</p></div>
+    </div>
+    <div class="container border border-warning my-3 p-3">
+        <div class="container d-inline  p-2 bg-primary text-white">d-inline</div>
+        <div class="container d-inline p-2 bg-dark text-white">d-inline</div>
+        <br>
+        <span class="d-block p-2 bg-primary text-white mt-3">d-block</span>
+        <span class="d-none d-lg-block p-2 bg-dark text-white">d-block</span>
+        <span class="d-none d-lg-block d-xl-none p-2 bg-dark text-white">Visible only on large</span>
+    </div>
+    <div class="d-flex flex-row bd-highlight mb-3">
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 1</div>
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 2</div>
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 3</div>
+    </div>
+    <div class="d-flex flex-column bd-highlight">
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 1</div>
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 2</div>
+        <div class="p-2 bd-highlight bg-primary m-3">Flex item 3</div>
+    </div>
+    <div class="p-2 border border-warning m-3 d-flex align-items-center">
+        <div class="flex-shrink-0">
+          <img src="https://picsum.photos/200/300" alt="...">
+        </div>
+        <div class="flex-grow-1 ms-3">
+          This is some content from a media component. You can replace this with any content and adjust it as needed.
+        </div>
+    </div>
+    <div class=" p-2 border border-warning m-3 d-flex align-items-center justify-content-evenly">
+        <button type="button" class="btn btn-primary position-relative">
+            Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
+          </button>
+          
+          <button type="button" class="btn btn-dark position-relative">
+            Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1 bi bi-caret-down-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+          </button>
+          
+          <button type="button" class="btn btn-primary position-relative">
+            Alerts <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
+          </button>
     </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
