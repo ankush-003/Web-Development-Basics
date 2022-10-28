@@ -1,4 +1,6 @@
 -> Updated Titles
 -> Updated Navbar
+-> Added More Progress Bars
 -> Changed Progress Bar Styling
-
+-> Changed Alignments in About me Section
+-> Changed Buttons Styling in Contact Us Section
