@@ -1,0 +1,4 @@
+-> npx create-react-app pes
+-> Browser router helps browser to store the history
+-> npm install --save styled-components
+-> npm install react-router-dom
