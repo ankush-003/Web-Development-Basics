@@ -1,0 +1,13 @@
+set NODE_OPTIONS=--openssl-legacy-provider
+
+npx create-react-app student		//Student is app name
+
+npm install --save styled-components	// for styled components
+
+npm install react-router-dom		// for react-router-dom
+
+npm install chalk@4.1.2			
+
+npm install node-fetch@2
+
+npm install validator	or	npm i -S validator
