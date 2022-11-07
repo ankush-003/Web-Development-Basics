@@ -31,3 +31,12 @@ fs.appendFile("./sample.txt","Appending 69",function(err) {
 // fs.unlink("sample.txt",function() {
 //     console.log("Unlink is Complete!");
 // })
+
+fs.stat("sample.txt",function(err,stats) {
+    if(err) {
+        return console.error(err);
+    }
+    console.log(stats);
+    console.log("is file? "+stats.isFile());
+    console.log("is directory? "+stats.isDirectory());
+});

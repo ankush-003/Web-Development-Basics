@@ -1,12 +1,12 @@
 // creating buffers
-var b1 = Buffer.alloc(7,"Hello");
-var b2 = Buffer.alloc(50);
+var b1 = Buffer.alloc(7,"Hello");// extra space is filled with repitition of "Hello"
+var b2 = Buffer.alloc(500);
 // displays hexadecimal code
 console.log(b1);
 console.log(b1.toString());
 
 // writing to buffers
-b2.write("Adding Text");
+b2.write("Adding Text");// here extra space is not effected
 console.log(b2.toString());
 
 // reading from buffer
@@ -23,7 +23,7 @@ console.log(c.toString());
 // Copying Buffers
 console.log("b3(before): " + b3.toString());
 console.log("b4(before): " + b4.toString());
-b4.copy(b3)
+b4.copy(b3) // copies b4 to b3
 console.log("b4: " + b4.toString());
 console.log("b3: " + b3.toString());
 
