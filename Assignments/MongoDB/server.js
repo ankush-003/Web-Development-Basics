@@ -27,17 +27,21 @@ http.createServer(function(req, res) {
             company = JSON.parse(data);
         });
         req.on('end', function() {
-            MongoClient.connect(mongoUrl, function(err, db) {
-                if (err) throw err;
-                var citydb = db.db("Bangalore_City");
-                citydb.collection("Companies").insertOne(company, function(err, response) {
+            try {
+                MongoClient.connect(mongoUrl, function(err, db) {
                     if (err) throw err;
-                    console.log("1 document inserted");
-                    db.close();
-                    res.end("Data inserted:\n" + company);
-                    // res.end("\nMessage: " + JSON.stringify(response));
+                    var citydb = db.db("Bangalore_City");
+                    citydb.collection("Companies").insertOne(company, function(err, response) {
+                        if (err) throw err;
+                        console.log("1 document inserted");
+                        db.close();
+                        res.end("Data inserted:\n" + company);
+                        // res.end("\nMessage: " + JSON.stringify(response));
+                    });
                 });
-            });
+            } catch (error) {
+                res.end("Error: " + error);
+            }
         });
     }
 }).listen(8081, function() {
