@@ -31,9 +31,9 @@ http.createServer(function(req, res) {
                 MongoClient.connect(mongoUrl, function(err, db) {
                     if (err) throw err;
                     var citydb = db.db("Bangalore_City");
-                    citydb.collection("Companies").insertOne(company, function(err, response) {
+                    citydb.collection("Companies").insertMany(company, function(err, response) {
                         if (err) throw err;
-                        console.log("1 document inserted");
+                        console.log(response.insertedCount + " documents inserted");
                         db.close();
                         res.end("Data inserted:\n" + company);
                         // res.end("\nMessage: " + JSON.stringify(response));
