@@ -3,8 +3,9 @@ var app = express();
 
 app.get('/hello/:id',function(req,res) {
     const id = req.params.id;
-    res.send('<h1>Hello ' + id + '</h1>');
-    // res.send('Hello World!');
+    // res.send('<h1>Hello ' + id + '</h1>');
+    res.send({user: id,
+              message: 'Hello ' + id});
 })
 
 app.listen(3000, function() {
