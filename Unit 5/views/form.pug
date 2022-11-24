@@ -1,0 +1,28 @@
+html 
+html
+    head
+        title= title
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+        integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')        
+    body
+        h1()= Welcome 
+        form(action='/',method = "POST")
+            div(class="container-fluid-lg m-3 p-3 border border-warning")
+                div(class="form-group border border-warning")
+                    label(for='fname') First name: 
+                    input(type='text', name='fname', id='fname' value = "Ankush")
+                br
+                div
+                    label(for='lname') Last name: 
+                    input(type='text', name='lname', id='lname')
+                br
+                div
+                    label(for='email') Email: 
+                    input(type='email', name='email', id='email')
+                br
+                div
+                    label(for='password') Password: 
+                    input(type='password', name='password', id='password')
+                button(type='submit' class='btn-warning') Submit        
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+                integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
