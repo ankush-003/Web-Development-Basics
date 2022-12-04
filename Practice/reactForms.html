@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Imports for react CDN -->
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="controlled">
+        <!-- This is where the react code will be injected -->
+    </div>
+    <div id="uncontrolled">
+        <!-- This is where the react code will be injected -->
+    </div>
+    <script type="text/babel">
+        class NameForm1 extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {value: ''};
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+        }
+
+        handleChange(event) {    this.setState({value: event.target.value});  }
+        handleSubmit(event) {
+            alert('A name was submitted: ' + this.state.value);
+            event.preventDefault();
+        }
+
+        render() {
+            return (
+            <form onSubmit={this.handleSubmit}>        <label>
+                Name:
+                <input type="text" value={this.state.value} onChange={this.handleChange} />        </label>
+                <input type="submit" value="Submit" />
+            </form>
+            );
+        }
+
+    }
+    class NameForm2 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();  }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.input.current.value);    event.preventDefault();
+    }
+
+    render() {
+        return (
+        <form onSubmit={this.handleSubmit}>
+            <label>
+            Name:
+            <input type="text" ref={this.input} />        </label>
+            <input type="submit" value="Submit" />
+        </form>
+        );
+    }
+    }
+
+
+
+    ReactDOM.render(
+            <NameForm1 />,
+            document.getElementById('controlled')
+        );
+    ReactDOM.render(
+            <NameForm2 />,
+            document.getElementById('uncontrolled')
+        );    
+
+    </script>
+</body>
+</html>
