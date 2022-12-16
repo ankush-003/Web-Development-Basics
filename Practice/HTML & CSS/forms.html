@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        form {
+            /* border: 2px solid white; */
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#field1">Fieldset1</a></li>
+            <li><a href="#field2">Fieldset 2</a></li>
+            <li><a href="#field3">Fieldset 3</a></li>
+            <li><a href="#end">End</a></li>
+        </ul>
+    </nav>
+    <form action="mailto:anshhv2003@gmail.com" method="post" target="_self">
+        <fieldset id="field1">
+            <legend>Personal Info</legend>
+            <label for="uname">Name: </label>
+            <input type="text" id="uname" name="uname" placeholder="Enter Your name" size="20" maxlength="10">
+            <br><br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter Your email" size="20"><br><br>
+            <label for="pwd">password</label>
+            <input type="password" id="pwd" name="pwd" placeholder="Enter Your password" size="20"><br><br>
+            <label for="link">Linkedn: </label>
+            <input type="url" id="link" name="link" placeholder="Enter Your Linkedin link" size="20"><br>
+            <label for="address">address</label>
+            <textarea name="address" id="address" cols="30" rows="10"></textarea>
+        </fieldset><br>
+        <fieldset id="field2">
+            <legend>Important Data</legend>
+            <p>Your Favourite language</p>
+            <input type="radio" name="fav" id="fav">
+            <label for="fav">Python</label><br>
+            <input type="radio" name="fav" id="fav">
+            <label for="fav">JavaScript</label><br>
+            <input type="radio" name="fav" id="fav">
+            <label for="fav">C++</label><br>
+            <input type="radio" name="fav" id="fav">
+            <label for="fav">Java</label><br>
+            <input type="radio" name="fav" id="fav" checked>
+            <label for="fav">C</label><br>
+
+            <label for="frameworks">Frameworks</label>
+            <select name="frameworks" id="frameworks" multiple>
+                <option value="django" selected>Django</option>
+                <option value="flask">Flask</option>
+                <option value="express">Express</option>
+                <option value="spring">Spring</option>
+                <option value="springboot">Spring Boot</option>
+            </select><br><br>
+
+            
+            
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked>
+            <label for="vehicle1"> I have a bike</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"> I have a car</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+
+        </fieldset><br>
+        <fieldset id="field3">
+            <legend>Other Types</legend>
+            <label for="happy">Happiness level</label>
+            <input type="range" min="0" max="100" value="69"><br><br>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date"><br><br>
+            <label for="time">Time: </label>
+            <input type="time" id="time" name="time"><br><br>
+            <label for="color">Color: </label>
+            <input type="color" id="color" name="color"><br><br>
+
+            <label for="browser">Choose your browser from the list:</label>
+            <input list="browsers" name="browser" id="browser">
+            
+            <datalist id="browsers">
+              <option value="Edge">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist> 
+        </fieldset>
+        <section id="end">
+            <input type="submit" value="Submit Form!">
+            <input type="reset">
+        </section>
+    </form>
+</body>
+</html>

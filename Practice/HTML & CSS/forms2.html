@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Question</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        form {
+            /* border: 2px solid white; */
+            margin: 10px;
+            padding: 10px;
+        }
+        table,td,tr {
+            border: 2px solid white;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="mailto:anshhv2003@gmail.com" method="post">
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2" >Your Personal Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="uname">Name: </label>
+                    </td>
+                    <td>
+                        <input type="text" id="uname" name="uname" placeholder="Enter Your name" size="20" maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email: </label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email" placeholder="Enter Your email" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="number">Number: </label></td>
+                    <td>
+                        <input type="text" pattern="[0-9]{10}" name="number" placeholder="10 digit mobile number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Address: </label>
+                    </td>
+                    <td>
+                        <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Your favourite show:</td>
+                    <td>
+                        <p>Romcom</p>
+                        <input type="radio" name="fav" id="fav">
+                        <label for="fav">Friends</label>
+                        <input type="radio" name="fav" id="fav">
+                        <label for="fav">How I met your mother</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Others</p>
+                        <input type="radio" name="others" id="others">
+                        <label for="others">Money Heist</label>
+                        <input type="radio" name="others" id="others">
+                        <label for="others">Big Bang</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="anime">Do you watch Anime?</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="anime" id="anime" value="yes">
+                        <label for="anime">Yes</label>
+                        <input type="radio" name="anime" id="anime" value="no">
+                        <label for="anime">No</label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="favChar">Your favourite character: </label>
+                    </td>
+                    <td>
+                        <select name="favChar" id="favChar">
+                            <option value="Ross">Ross</option>
+                            <option value="Monica">Monica</option>
+                            <option value="Chandler">Chandler</option>
+                            <option value="Joey">Joey</option>
+                            <option value="Phoebe">Phoebe</option>
+                            <option value="Rachel">Rachel</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Submit">
+        <input type="reset" value="reset">
+    </form>
+</body>
+</html>
