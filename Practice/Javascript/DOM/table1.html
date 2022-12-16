@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating Table!</title>
+</head>
+<body>
+    <Table style="width:100%;border-collapse: collapse;" border="2px solid black">
+        <caption>
+            <label for="rows">Enter Number of rows</label>
+            <input type="number" id="rows" name="rows">
+            <label for="cols">Enter Number of columns</label>
+            <input type="number" id="cols" name="cols">
+            <button onclick="createTable()">Create Table</button>
+        </caption>
+    </Table>
+    <script>
+        function createTable() {
+            let table = document.createDocumentFragment();
+            let rows = document.getElementById("rows").value;
+            let cols = document.getElementById("cols").value;
+            let heading = document.createElement("h3");
+            heading.textContent = `Table with ${rows} rows and ${cols} columns`;
+            // heading.style.textAlign = "center";
+            table.appendChild(heading);
+            for (let i = 0; i < rows; i++) {
+                let tr = document.createElement("tr");
+                for (let j = 0; j < cols; j++) {
+                    let td = document.createElement("td");
+                    td.textContent = `Row ${i + 1} Column ${j + 1}`;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.querySelector("table").appendChild(table);
+        }
+    </script>
+</body>
+</html>
