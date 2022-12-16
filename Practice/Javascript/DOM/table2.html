@@ -13,11 +13,12 @@
         table {
             border-collapse: collapse;
             margin: 10px;
-            width: 50%;
+            width: 75%;
         }
         td, th {
             border: 1px solid orange;
             padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -33,6 +34,9 @@
     <script>
         function createTable() {
             let table = document.createDocumentFragment();
+            //document fragment is a virtual node that is not part of the DOM tree
+            //it is used to create a node that is not part of the DOM tree
+            // it improves performance
             let rows = document.getElementById("rows").value;
             let cols = document.getElementById("cols").value;
             // let heading = document.createElement("h3");

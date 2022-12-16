@@ -15,7 +15,8 @@ function manager(name,age,dept){
 var m = new manager("John",30,"Sales");
 // console.log(m.getName()); -> error as getName is not defined in manager prototype
 
-manager.prototype = Object.create(employee.prototype);
+// manager.prototype = Object.create(employee.prototype);
+manager.prototype = new employee();// this will create a new object of employee and assign it to manager prototype
 manager.prototype.constructor = manager;
 
 manager.prototype.getDept = function(){
