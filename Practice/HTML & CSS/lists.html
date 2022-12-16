@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists in HTML</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .container {
+            border: 2px solid orange;
+            margin: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>List Types</h3>
+        <div style="display: flex;gap: 20px;">
+            <div>
+                <strong>Unordered</strong>
+                <ul style="list-style: '\1F44D';">
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+            </div>
+            <div >
+                <strong>Ordered</strong>
+                <ol>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ol>
+            </div>
+            <div>
+                <strong>Definition List</strong>
+                <dl>
+                    <dt> Tony Stark
+                    <dd>Founder of Stark Company
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>List</h2>
+        <ol start="2" style="list-style-type: upper-alpha;">
+            <li>Vegetables
+                <ul style="list-style-type: square;">
+                    <li>Carrot</li>
+                    <li>Spinach</li>
+                    <li>Kale</li>
+                </ul>
+            </li>
+            <li>
+                Fruits
+                <ol style="list-style-type: circle;">
+                    <li>Apple</li>
+                    <li>Orange</li>
+                    <li>Banana</li>
+                </ol>
+            </li>
+            <dl>
+                <dt> <h3>Reminder</h3>
+                <dd>Eat your veggies!
+            </dl>
+        </ol>
+    </div>
+</body>
+</html>
