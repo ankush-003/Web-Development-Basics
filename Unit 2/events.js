@@ -8,6 +8,7 @@ function handler(event) {
     console.log(event.target.innerText)// same output with innerHTML
     event.target.style.fontSize = "20px";
     event.target.style.color = "red";
+    console.log(event.target.getAttribute("style"));
 }
 
 function init() {

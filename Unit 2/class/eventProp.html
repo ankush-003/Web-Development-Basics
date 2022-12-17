@@ -47,10 +47,12 @@
             for (i in ele1)
             {
                 ele1[i].addEventListener("click",func2,true);
-                ele1[i].addEventListener("dblclick",func2,false);
+                ele1[i].addEventListener("dblclick",func2,true);
             }
         }    
-        function func2() {
+        function func2(event) {
+            console.log(event.eventPhase);
+            // console.log(this);
             alert("ID which is executed is = " + this.getAttribute("id"));
         }    
     </script>
