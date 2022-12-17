@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker!</title>
+</head>
+<body>
+    <h2>Web Worker is Counting!</h2>
+    <input type="number" id = "count">
+    <button id="start" onclick="start()">Start Count</button>&nbsp;
+    <button id="stop" onclick="stop()">Stop Count</button>
+    <script>
+        var w;
+        function start() {
+            if(typeof Worker === undefined) {
+                alert("Browser Doesnt support Workers!")
+            }
+            if(typeof w == undefined) {
+                w = new Worker("./worker.js");
+            }
+            w = new Worker("./worker.js")
+            w.onmessage = (event) => {
+                document.querySelector("#count").value = event.data;
+            }
+        }
+
+        function stop() {
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+</body>
+</html>
