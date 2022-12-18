@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlled Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        div {
+            margin: 10px;
+            padding: auto;
+            border: 2px solid white;
+        }
+        input:focus {
+            outline-color: orange;
+            size: 10;
+            margin: auto;
+            padding: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="root">
+        <!-- <h1>
+            Your name is: <span id="name"></span>
+        </h1>
+        <h1>
+            Your email is: <span id="email"></span>
+        </h1> -->
+    </div>
+    <script type="text/babel">
+        class Form extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    fname: "",
+                    lname: "",
+                    email: ""
+                }
+                this.name = null;
+                this.email = null;
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+                this.butStyle = {
+                    backgroundColor: "white",
+                    color: "black",
+                    border: "2px solid white",
+                    padding: "5px",
+                    margin: "5px"
+                }
+            }
+            handleChange(event) {
+                const {name, value} = event.target; // destructuring
+                this.setState({
+                    [name]: value
+                });
+            }
+            handleSubmit(event) {
+                event.preventDefault();
+                this.name.innerHTML = this.state.fname + " " + this.state.lname;
+                this.email.innerHTML = this.state.email;
+            }
+            render() {
+                return (
+                    <div>
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <input
+                                type="text"
+                                name="fname"
+                                id="fname"
+                                value={this.state.fname}
+                                onChange={this.handleChange}
+                                placeholder="First Name"
+                            />
+                            <input
+                                type="text"
+                                name="lname"
+                                id="lname"
+                                value={this.state.lname}
+                                onChange={this.handleChange}
+                                placeholder="Last Name"
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                placeholder="Email"
+                            />
+                            <button style={this.butStyle}>Submit</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h1>
+                            Your name is: <span id="name" ref={ele => this.name = ele} ></span>
+                        </h1>
+                        <h1>
+                            Your email is: <span id="email" ref={ele => this.email = ele}></span>
+                        </h1>
+                    </div>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Form />, document.querySelector(".root"));
+    </script>
+</body>
+</html>
