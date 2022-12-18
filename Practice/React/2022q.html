@@ -56,12 +56,12 @@
                     borderRadius: "5px"
                 }
             }
-            handleSubmit = (event) => {
-                event.preventDefault();
-                var bill = 0;
-                console.log(this.state.items);
+            // handleSubmit = (event) => {
+            //     event.preventDefault();
+            //     var bill = 0;
+            //     console.log(this.state.items);
                 
-            }
+            // }
             handleChange = (event) => {
                 Vegetables = this.props.Vegetables;
                 var value = event.target.value;
@@ -87,7 +87,7 @@
                                 </div>
                             ))}
                         </div>
-                        <button onClick={this.handleSubmit} style={this.butStyle}>Submit</button>
+                        {/* <button onClick={this.handleSubmit} style={this.butStyle}>Submit</button> */}
                         <h2>Your Bill: {this.state.bill}</h2>
                     </div>
                 );
