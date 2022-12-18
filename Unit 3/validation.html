@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validating Property Values</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+</head>
+<body>
+    <div class="root">
+
+    </div>
+    <script type="text/babel">
+        var arr1=["book1","book2","book3"];
+        function BookList(props) {
+            var book_lists=props.books;
+            var b = book_lists.map((book,index)=> <li key={index}>{book}</li>);
+            return <ul>{b}</ul>
+        } 
+        BookList.propTypes={
+            books:React.PropTypes.array.isRequired
+        }
+        BookList.defaultProps={
+            books:["book1","book2","book3"]
+        }
+        ReactDOM.render(<BookList books={arr1}/>,document.querySelector(".root"));
+    </script>
+</body>
+</html>

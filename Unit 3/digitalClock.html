@@ -34,17 +34,21 @@
                     count:0,
                     msg:"",
                 }
+                // this.tick = this.tick.bind(this);
             }
 
-            tick = () => {
+            tick = () =>{
                 this.setState({
                     time:new Date(),
                     count:this.state.count + 1,
                 })
                 if (this.state.count > 10) {
-                    this.setState({
-                        msg:this.state.msg + "Clock Died!",
-                    }) 
+                    // this.setState({
+                    //     msg: this.state.msg + "Clock Died!",
+                    // })
+                    this.setState((props,state) => ({
+                        msg:state.msg + "Clock Died!",
+                    }))
                 }
             }
 

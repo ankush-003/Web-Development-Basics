@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Syntax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="colortext">
+        <p>item 1</p>
+        <p>item 2</p>
+        <p>item 3</p>
+        <p>item 4</p>
+        <p>item 5</p>
+    </div>
+    <h1>Hover Over to increase size!</h1>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li class="liclass">fade out 2 seconds</li>
+    </ul>
+    <script>
+        $(document).ready(
+            function() {
+                $("#colortext p:last-child").css("color","green");
+                $("h1").mouseover(function() {
+                    // let size = ($(this).css("font-size")) * 5;
+                    let size = parseInt($(this).css("font-size")) * 5;                
+                    $(this).css("font-size",size);
+                })
+                $(".liclass").fadeOut(2000,function() {
+                    // console.log("fadeout complete");
+                    $(this).html("fade in 3 seconds");
+                    $(this).fadeIn(3000);
+                })
+                $("#colortext p:nth-child(2)").css("color","red");
+                // $('div').attr("class");
+            }
+        )
+    </script>
+</body>
+</html>
