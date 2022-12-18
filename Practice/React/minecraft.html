@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        class Minecraft extends React.Component {
+            constructor(props) {
+                super(props);
+                // this.setStones = (ele) => {this.stones = ele}
+                // this.setSticks = (ele) => {this.sticks = ele}
+                this.setAxes = (ele) => {this.axes = ele}
+                this.handleClick = this.handleClick.bind(this)
+                this.state = {
+                    stones: 0,
+                    stick: 0,
+                    axes: 0
+                }
+                // this.axes = React.CreateRef()
+            }
+            handleClick(event) {
+                // var axes = (Math.min(Math.floor((this.stones.value)/2),Math.floor((this.sticks.value)/3)))
+                var axes = (Math.min(Math.floor((this.state.stones)/2),Math.floor((this.state.sticks)/3)))
+                console.log(axes)
+                // console.log(this.stones)
+                // console.log(this.sticks);
+                console.log("in click");
+                this.setState({
+                    axes: axes
+                })
+            }
+            handleChange = (event) => {
+                var id = event.target.id
+                var num = event.target.value
+                this.setState((prevState)=>({
+                    [id]:num
+                }))
+            }
+            render() {
+                return(<div>
+                    <label for="stones">Enter Stones</label>
+                    <input type="text" id="stones" onChange={this.handleChange}/>
+                    <label for="sticks">Enter Sticks</label>
+                    <input type="text" id="sticks" onChange={this.handleChange}/>
+                    <div>
+                        <h2 id="res">{this.state.axes}</h2>&nbsp;
+                        <button onClick={this.handleClick}>Calculate Axes</button>
+                    </div>
+                    </div>)
+            }
+        }
+        ReactDOM.render(<Minecraft/>,document.getElementById("root"))
+    </script>
+</body>
+</html>
