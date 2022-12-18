@@ -64,13 +64,13 @@
             // }
             handleChange = (event) => {
                 Vegetables = this.props.Vegetables;
-                var value = event.target.value;
+                // var value = event.target.value;
                 // var items = this.state.items;
                 // items[index].price = value;
                 var index = (event.target.id);
                 console.log(Vegetables[index]);
                 this.setState(prevState => ({
-                    bill: prevState.bill + Vegetables[index].price * value
+                    bill: prevState.bill + Vegetables[index].price 
                 }));
             }
             render() {
