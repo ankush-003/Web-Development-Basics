@@ -3,7 +3,9 @@ var url = require('url');
 var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
+    // url.parse(req.url,true) returns an object with the following properties:
     var path = "." + url.parse(req.url,true).pathname
+    // console.table(req);
     fs.readFile(path,function(err,data) {
         if (err) {
             res.writeHead(404, {'Content-Type': 'text/html'});
