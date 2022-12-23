@@ -1,6 +1,6 @@
-var express = require('express');
+var express = require('../../Unit 5/class/node_modules/express');
 var app = express();
-var fileupload = require('express-fileupload');
+var fileupload = require('../../Unit 5/class/node_modules/express-fileupload');
 
 app.use((req, res, next) => {
     console.log('middleware');

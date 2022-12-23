@@ -79,7 +79,7 @@
                         <h1>Vegetable Shop</h1>
                         <div onSubmit={this.handleSubmit} className="vegetable">
                             {this.props.Vegetables.map((vegetable, index) => (
-                                <div>
+                                <div key={vegetable.name}>
                                     <h3>Vegetable: {vegetable.name}</h3>
                                     <h3>Price: {vegetable.price}</h3>
                                     <img src={vegetable.img} alt="vegetable" width="100" height="100" /><br/>
