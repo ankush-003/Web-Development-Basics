@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a responsive Navbar</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            color: orange
+        }
+        body {
+            background-color: black;
+        }
+        #search {
+            background-color: transparent;
+            color: orange;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        @media all and (max-width: 600px) {
+            .container {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media all and (max-width: 400px) {
+            ul.container > li {
+                flex-basis: 100%;
+            }
+        }
+        /* .search {
+            margin-left: auto;
+        } */
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="container">
+            <li class="home"><a href="#">Home</a></li>
+            <li class="about"><a href="#">About Me</a></li>
+            <li class="contact"><a href="#">Contact</a></li>
+            <li class="search">
+                <form action="#" method="get">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                </form>
+            </li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
